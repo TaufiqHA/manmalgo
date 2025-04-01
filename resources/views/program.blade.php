@@ -36,7 +36,7 @@
             </p>
           </article>
           <ul
-            class="list-image-[url(/logo/check-mark.png)] text-md list-inside leading-10"
+            class="list-image-[url({{ url('logo/check-mark.png') }})] text-md list-inside leading-10"
           >
             <li>Praktikum di laboratorium modern</li>
             <li>Penelitian ilmiah terapan</li>
@@ -59,7 +59,7 @@
             </p>
           </article>
           <ul
-            class="list-image-[url(/logo/check-mark.png)] text-md list-inside leading-10"
+            class="list-image-[url({{ url('logo/check-mark.png') }})] text-md list-inside leading-10"
           >
             <li>Studi kasus ekonomi dan sosial</li>
             <li>Praktik akuntansi modern</li>
