@@ -21,3 +21,27 @@ Route::get('/galeri', function() {
 Route::get('/alumni', function() {
     return view('alumni');
 });
+
+Route::get('/berita', function () {
+    return view('berita');
+});
+
+Route::get('/kontak', function() {
+    return view('kontak');
+});
+
+Route::get('/beritaDetail', function() {
+    return view('beritaDetail');
+});
+
+Route::get('/detailInformasi', function() {
+    return view('detailInformasi');
+});
+
+Route::get('/info', function() {
+    return view("info");
+});
+
+Route::get('/pendaftaran', function() {
+    return view('pendaftaran');
+});

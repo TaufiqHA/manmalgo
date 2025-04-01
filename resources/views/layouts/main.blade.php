@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     @vite('resources/css/app.css')
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/feather-icons"></script>
     <title>MAN 1 GOWA | Home</title>
   </head>
@@ -34,8 +35,8 @@
           <li><a href="/fasilitas">Fasilitas</a></li>
           <li><a href="/galeri">Album</a></li>
           <li><a href="/alumni">Alumni</a></li>
-          <li><a href="berita.html">Berita</a></li>
-          <li><a href="kontak.html">Kontak</a></li>
+          <li><a href="/berita">Berita</a></li>
+          <li><a href="/kontak">Kontak</a></li>
         </ul>
       </div>
     </div>
