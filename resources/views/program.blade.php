@@ -6,8 +6,8 @@
 <div class="hero bg-green-200 min-h-fit pb-30 pt-50 text-green-900">
     <div class="hero-content text-center">
       <div class="max-w-xl">
-        <h1 class="text-5xl font-bold">Program Akademik</h1>
-        <p class="py-6">
+        <h1 class="text-2xl lg:text-5xl font-bold">Program Akademik</h1>
+        <p class="py-6 text-sm lg:text-base">
           Kami menamwarkan berbagai program unggulan yang dirancang untuk
           mengembangkan potensi siswa secara optimal
         </p>
@@ -18,8 +18,8 @@
 
 <!-- unggulan section start -->
 <section class="py-30">
-    <div class="container mx-auto">
-      <div class="flex gap-10">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-col lg:flex-row gap-10">
         <div class="w-full p-10 bg-green-200 rounded-xl shadow-lg">
           <header class="flex gap-3 items-center mb-10">
             <img
@@ -27,7 +27,7 @@
               alt="microscope"
               class="w-10 h-10"
             />
-            <h2 class="text-xl font-bold">Program IPA Unggulan</h2>
+            <h2 class="text-sm lg:text-xl font-bold">Program IPA Unggulan</h2>
           </header>
           <article class="mb-10 w-full">
             <p class="text-md">
@@ -50,7 +50,7 @@
               alt="calculator"
               class="w-10 h-10"
             />
-            <h2 class="text-xl font-bold">Program IPS Terpadu</h2>
+            <h2 class="text-sm lg:text-xl font-bold">Program IPS Terpadu</h2>
           </header>
           <article class="mb-10 w-full">
             <p class="text-md">
@@ -77,8 +77,8 @@
       <img src="logo/quran.png" alt="quran" class="w-15 h-15" />
       <h2 class="text-xl font-bold">Program Tahfidz Quran</h2>
     </header>
-    <div class="container mx-auto">
-      <div class="flex justify-between gap-10">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-col lg:flex-row justify-between gap-10">
         <div
           class="w-full flex flex-col items-center gap-5 p-10 bg-white rounded-xl shadow-xl"
         >
@@ -86,7 +86,7 @@
             <img src="logo/toga-caps.png" alt="toga caps" class="w-15 h-15" />
           </figure>
           <h2 class="text-lg font-bold">Pembimbing Profesional</h2>
-          <p class="text-md">Dibimbing oleh hafidz/hafidzah berpengalaman</p>
+          <p class="text-md text-center lg:text-start">Dibimbing oleh hafidz/hafidzah berpengalaman</p>
         </div>
         <div
           class="w-full flex flex-col items-center gap-5 p-10 bg-white rounded-xl shadow-xl"
@@ -95,7 +95,7 @@
             <img src="logo/wall-clocks.png" alt="clocks" class="w-15 h-15" />
           </figure>
           <h2 class="text-lg font-bold">Jadwal Terstruktur</h2>
-          <p class="text-md">Program pembelajaran yang sistematis</p>
+          <p class="text-md text-center lg:text-start">Program pembelajaran yang sistematis</p>
         </div>
         <div
           class="w-full flex flex-col items-center gap-5 p-10 bg-white rounded-xl shadow-xl"
@@ -104,7 +104,7 @@
             <img src="logo/quality.png" alt="quality" class="w-15 h-15" />
           </figure>
           <h2 class="text-lg font-bold">Sertifikasi</h2>
-          <p class="text-md">Sertifikat tahfidz yang diakui</p>
+          <p class="text-md text-center lg:text-start">Sertifikat tahfidz yang diakui</p>
         </div>
       </div>
     </div>
@@ -116,8 +116,8 @@
     <header class="w-full text-center mb-10">
       <h2 class="text-xl font-bold">Progam Ekstrakurikuler</h2>
     </header>
-    <div class="container mx-auto">
-      <div class="flex justify-between gap-10">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-col lg:flex-row justify-between gap-10">
         <div
           class="p-10 w-full flex flex-col items-center gap-5 bg-green-200 rounded-xl shadow-xl"
         >

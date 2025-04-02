@@ -65,12 +65,12 @@
                 </ul>
               </details>
             </li>
-            <li><a>Program</a></li>
-            <li><a>Fasiltas</a></li>
-            <li><a>Album</a></li>
-            <li><a>Alumni</a></li>
-            <li><a>Berita</a></li>
-            <li><a>Kontak</a></li>
+            <li><a href="/program" >Program</a></li>
+            <li><a href="/fasilitas" >Fasiltas</a></li>
+            <li><a href="/galeri">Album</a></li>
+            <li><a href="/alumni" >Alumni</a></li>
+            <li><a href="/berita" >Berita</a></li>
+            <li><a href="/kontak" >Kontak</a></li>
           </ul>
         </div>
       </div>

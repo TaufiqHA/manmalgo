@@ -27,25 +27,25 @@
 
   <!-- superiority section start -->
   <section id="superiority" class="my-30">
-    <div class="container mx-auto">
-      <div class="flex justify-between gap-30">
-        <div class="flex flex-col gap-4">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-col lg:flex-row justify-between gap-30">
+        <div class="flex flex-col items-center lg:items-start gap-4">
           <img src="logo/book.png" alt="book" class="w-12 h-12" />
           <h2 class="text-lg font-bold">Kurikulum Terkini</h2>
-          <p>
+          <p class="lg:text-start text-center">
             Mengimplementasikan kurikulum nasional dengan pengayaan program
             keagamaan
           </p>
         </div>
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 items-center lg:items-start">
           <img src="logo/group.png" alt="group " class="w-12 h-12" />
           <h2 class="text-lg font-bold">Guru Berkualitas</h2>
-          <p>Didukung oleh tenaga pengajar profesional dan berpengalaman</p>
+          <p class="text-center lg:text-start">Didukung oleh tenaga pengajar profesional dan berpengalaman</p>
         </div>
-        <div class="flex flex-col gap-4">
+        <div class="flex flex-col gap-4 items-center lg:items-start">
           <img src="logo/building.png" alt="building" class="w-12 h-12" />
           <h2 class="text-lg font-bold">Fasilitasn Modern</h2>
-          <p>Dilengkapi dengan fasilitas pembelajaran modern dan nyaman</p>
+          <p class="text-center lg:text-start">Dilengkapi dengan fasilitas pembelajaran modern dan nyaman</p>
         </div>
       </div>
     </div>
@@ -54,21 +54,21 @@
 
   <!-- about section start -->
   <section class="my-30">
-    <div class="container mx-auto flex justify-between gap-10">
+    <div class="container mx-auto flex flex-col lg:flex-row justify-between px-5 lg:px-0 gap-10">
       <img
         src="img/Tianyou Experimental Primary School and Kindergarten, Suzhou,China by BAU.jpeg"
         alt="school"
-        class="max-w-2xl rounded-2xl"
+        class="mx-w-sm lg:max-w-2xl rounded-2xl"
       />
       <div class="flex max-w-3xl flex-col justify-center gap-4">
-        <h2 class="text-2xl font-bold">Tentang MAN 1 GOWA</h2>
-        <p class="text-lg">
+        <h2 class="text-lg lg:text-2xl font-bold">Tentang MAN 1 GOWA</h2>
+        <p class="lg:text-lg text-sm">
           MAN 1 GOWA adalah madrasah aliah negeri yang berkomintmen untuk
           memberikan pendidikan berkualitas dengna mamdukan niai-nilai
           keislaman dan pembelajaran modern.
         </p>
         <ul
-          class="list-image-[url({{ url('logo/check-mark.png') }})] text-lg list-inside font-semibold leading-10"
+          class="list-image-[url({{ url('logo/check-mark.png') }})] text-sm lg:text-lg list-inside font-semibold leading-10"
         >
           <li>Akreditasi A</li>
           <li>Program Unggulan Keagamaan</li>
@@ -81,9 +81,9 @@
 
   <!-- program section start -->
   <section class="my-40">
-    <div class="text-center container mx-auto">
+    <div class="text-center container mx-auto px-5 lg:px-0">
       <h2 class="text-2xl font-bold mb-10">Program Unggulan</h2>
-      <div class="flex justify-between gap-10">
+      <div class="flex flex-col lg:flex-row justify-between gap-10">
         <div>
           <div class="card bg-base-100 w-full shadow-md">
             <figure>
@@ -135,8 +135,8 @@
   <!-- program section end -->
 
   <!-- stat section start -->
-  <section class="my-30">
-    <div class="container mx-auto flex justify-around">
+  <section class="my-5 lg:my-30">
+    <div class="container mx-auto flex flex-col lg:flex-row justify-around px-5 lg:px-0">
       <div class="stats">
         <div class="stat text-center">
           <div class="stat-value text-green-700">500+</div>
@@ -170,8 +170,8 @@
     <header class="w-full text-center">
       <h2 class="text-2xl font-bold mb-10">Sejarah MAN 1 GOWA</h2>
     </header>
-    <div class="container mx-auto">
-      <div class="flex justify-between gap-10">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-col lg:flex-row justify-between gap-10">
         <img
           src="img/Studios Architecture Designs an Eco-Friendly School in Washington.jpeg"
           alt="header image"
@@ -202,10 +202,10 @@
     <header class="w-full text-center">
       <h1 class="text-2xl font-bold mb-10">Visi & Misi</h1>
     </header>
-    <div class="container mx-auto">
-      <div class="flex justify-between gap-10">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-col lg:flex-row justify-between gap-10">
         <div class="w-full">
-          <header class="flex items-center gap-3 mb-5">
+          <header class="flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-3 mb-5">
             <img src="logo/eye.png" alt="eye logo" class="w-10 h-10" />
             <h2 class="text-lg font-bold">Visi</h2>
           </header>
@@ -215,7 +215,7 @@
           </p>
         </div>
         <div class="w-full">
-          <header class="flex items-center gap-3 mb-5">
+          <header class="flex flex-col lg:flex-row justify-center lg:justify-start items-center gap-3 mb-5">
             <img src="logo/target.png" alt="target logo" class="w-10 h-10" />
             <h2 class="text-lg font-bold">Misi</h2>
           </header>
@@ -238,9 +238,9 @@
     <header class="w-full text-center mb-10">
       <h2 class="text-2xl font-bold">Prestasi Sekolah</h2>
     </header>
-    <div class="container mx-auto">
+    <div class="container mx-auto px-5 lg:px-0">
       <div class="flex justify-around gap-10">
-        <figure class="w-xl">
+        <figure class="hidden lg:block w-xl">
           <img
             src="img/activity/Schools’ ‘land lab’ lives up to billing.jpeg"
             alt="lab"
@@ -289,16 +289,16 @@
     <div
       class="container mx-auto text-center flex flex-col gap-5 items-center"
     >
-      <h2 class="text-5xl font-bold text-white">
+      <h2 class="text-xl lg:text-5xl font-bold text-white">
         Bergabung dengan MAN 1 Gowa
       </h2>
-      <p class="text-lg text-white">
+      <p class="text-sm lg:text-lg text-white">
         Daftarkan diri anda sekarang menjadi bagian dari generasi unggul MAN 1
         Gowa
       </p>
       <a
         href="/info"
-        class="px-3 py-5 bg-white text-green-700 w-md rounded-xl mt-10"
+        class="px-3 py-5 bg-white text-green-700 w-[200px] lg:w-md rounded-xl mt-10"
       >
         Informasi Pendaftaran
       </a>

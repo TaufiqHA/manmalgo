@@ -6,8 +6,8 @@
 <div class="hero bg-green-200 min-h-fit pb-30 pt-50 text-green-900">
     <div class="hero-content text-center">
       <div class="max-w-xl">
-        <h1 class="text-5xl font-bold">Galeri Foto</h1>
-        <p class="py-6">Dokumentasi kegiatan dan momen berkesan MAN 1 Gowa</p>
+        <h1 class="text-2xl lg:text-5xl font-bold">Galeri Foto</h1>
+        <p class="py-6 text-sm lg:text-base">Dokumentasi kegiatan dan momen berkesan MAN 1 Gowa</p>
       </div>
     </div>
   </div>
@@ -15,8 +15,8 @@
 
   <!-- filter section start -->
   <section class="py-10 border-b border-b-gray-200">
-    <div class="container mx-auto">
-      <div class="flex justify-center gap-3">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-wrap justify-center gap-3">
         <button class="btn rounded-full bg-green-500 border-none text-white">
           Semua
         </button>
@@ -47,8 +47,8 @@
 
   <!-- galery section start -->
   <section class="py-30">
-    <div class="container mx-auto">
-      <div id="album" class="w-full grid grid-flow-row grid-cols-4 gap-4">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div id="album" class="w-full grid grid-flow-row grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-4">
         <img src="img/album/1.jpeg" alt="1" />
         <img src="img/album/2.jpeg" alt="2" />
         <img src="img/album/3.jpeg" alt="3" />

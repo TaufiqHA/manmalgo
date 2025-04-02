@@ -6,8 +6,8 @@
 <div class="hero bg-green-200 min-h-fit pb-30 pt-50 text-green-900">
     <div class="hero-content text-center">
       <div class="max-w-xl">
-        <h1 class="text-5xl font-bold">Data Alumni</h1>
-        <p class="py-6">
+        <h1 class ="text-2xl lg:text-5xl font-bold">Data Alumni</h1>
+        <p class="py-6 text-sm lg:text-base">
           Jejak kesuksesan para alumni MAN 1 Gowa di berbagai bidang
         </p>
       </div>
@@ -17,8 +17,8 @@
 
   <!-- filter section start -->
   <section class="py-10">
-    <div class="container mx-auto">
-      <div class="flex justify-between">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-col lg:flex-row justify-between">
         <!-- search section start -->
         <label class="input">
           <svg
@@ -44,7 +44,7 @@
         <!-- search section end -->
 
         <!-- filter section start -->
-        <div class="w-xl flex gap-5">
+        <div class="w-xl flex flex-col lg:flex-row mt-5 lg:mt-0 gap-5">
           <select class="select">
             <option disabled selected>Tahun Lulus</option>
             <option>Crimson</option>
@@ -65,9 +65,9 @@
   <!-- filter section end -->
 
   <!-- alumni section start -->
-  <section class="py-30">
-    <div class="container mx-auto">
-      <div class="w-full grid grid-flow-row grid-cols-3 gap-4">
+  <section class="py-10 lg:py-30">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="w-full grid grid-flow-row grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-4">
         <div class="p-10 shadow-xl rounded-xl">
           <header class="flex gap-3 items-center mb-5">
             <div class="avatar">

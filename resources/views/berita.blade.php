@@ -6,8 +6,8 @@
 <div class="hero bg-green-200 min-h-fit pb-30 pt-50 text-green-900">
     <div class="hero-content text-center">
       <div class="max-w-xl">
-        <h1 class="text-5xl font-bold">Berita & Informasi</h1>
-        <p class="py-6">
+        <h1 class="text-2xl lg:text-5xl font-bold">Berita & Informasi</h1>
+        <p class="py-6 text-sm lg:text-base">
           Temukan berita terbaru, pengumuman dan informasi penting seputar
           kegiatan akademik dan non-akademik di MAN 1 Gowa
         </p>
@@ -18,8 +18,8 @@
 
   <!-- filter section start -->
   <section class="py-10 border-b border-b-gray-200">
-    <div class="container mx-auto">
-      <div class="flex justify-center gap-3">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-wrap justify-center gap-3">
         <button class="btn rounded-full bg-green-500 border-none text-white">
           Semua
         </button>
@@ -50,9 +50,9 @@
 
   <!-- utama section start -->
   <section class="py-10">
-    <div class="container mx-auto">
+    <div class="container mx-auto px-5 lg:px-0">
       <div
-        class="flex justify-between w-full p-10 bg-green-100 rounded-xl gap-10"
+        class="flex flex-col lg:flex-row justify-between w-full p-0 lg:p-10 bg-green-100 rounded-xl gap-10"
       >
         <figure>
           <img
@@ -61,25 +61,25 @@
             class="rounded-xl w-5xl"
           />
         </figure>
-        <div class="flex flex-col gap-10 justify-center">
+        <div class="flex flex-col gap-10 justify-center p-10 lg:p-0">
           <span class="badge bg-green-700 text-white">Prestasi</span>
-          <a href="/beritaDetail" class="text-3xl font-bold text-green-800">
+          <a href="/beritaDetail" class="text-lg lg:text-3xl font-bold text-green-800">
             Tim Olimpiade MAN 1 Gowa Raih Juara Umum dalam Kompetisi Sains
             Nasional
           </a>
-          <p class="text-md">
+          <p class="text-sm lg:text-md">
             Tim Olimpieade MAN 1 Gowa berhasil meraih prestasi membanggakan
             dalam Kompetisi Sains Nasional (KSN) 2025 yang diselenggarakan di
             Jakarta ...
           </p>
           <div class="flex gap-3">
-            <div class="flex gap-2">
-              <i data-feather="calendar"></i>
-              <p>15 Mar 2025</p>
+            <div class="flex items-center gap-2">
+              <i data-feather="calendar" class="w-5 lg:w-10"></i>
+              <p class="text-sm lg:text-base">15 Mar 2025</p>
             </div>
-            <div class="flex gap-2">
-              <i data-feather="user"></i>
-              <p>Admin</p>
+            <div class="flex items-center gap-2">
+              <i data-feather="user" class="w-5 lg:w-10"></i>
+              <p class="text-sm lg:text-base">Admin</p>
             </div>
           </div>
         </div>
@@ -90,8 +90,8 @@
 
   <!-- pagination section start -->
   <section class="py-30">
-    <div class="container mx-auto">
-      <div class="flex justify-between gap-10">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-col lg:flex-row justify-between gap-10">
         <div class="card bg-base-100 w-full shadow-sm">
           <figure>
             <img
@@ -192,11 +192,11 @@
 
   <!-- informasi section start -->
   <section class="py-10">
-    <header class="container mx-auto mb-5">
-      <h2 class="text-2xl font-bold text-green-700">Informasi Penting</h2>
+    <header class="container mx-auto mb-5 px-5 lg:px-0">
+      <h2 class="text-2xl font-bold text-green-700 lg:text-start text-center">Informasi Penting</h2>
     </header>
-    <div class="container mx-auto">
-      <div class="flex justify-between gap-10">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-col lg:flex-row justify-between gap-10">
         <!-- pengumuman section start -->
          <div class="w-full">
           <header>

@@ -6,8 +6,8 @@
 <div class="hero bg-green-200 min-h-fit pb-30 pt-50 text-green-900">
     <div class="hero-content text-center">
       <div class="max-w-xl">
-        <h1 class="text-5xl font-bold">Fasilitas Sekolah</h1>
-        <p class="py-6">
+        <h1 class="text-2xl lg:text-5xl font-bold">Fasilitas Sekolah</h1>
+        <p class="py-6 text-sm lg:text-base">
           Fasilitas modern untuk mendukung kegiatan belajar mengajar
         </p>
       </div>
@@ -17,8 +17,8 @@
 
   <!-- gedung section start -->
   <section class="py-30">
-    <div class="container mx-auto">
-      <div class="flex justify-between gap-10">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-col lg:flex-row justify-between gap-10">
         <div class="card bg-base-100 w-full shadow-md">
           <figure>
             <img src="img/fasilitas/lab.jpg" alt="lab" class="rounded-xl" />
@@ -73,8 +73,8 @@
 
   <!-- fasilitas utama section start -->
   <section class="py-30 bg-green-200">
-    <div class="container mx-auto">
-      <div class="w-full flex justify-between gap-10">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="w-full flex flex-col lg:flex-row justify-between gap-10">
         <div
           class="w-full flex flex-col gap-5 bg-white p-5 shadow-xl rounded-xl"
         >
@@ -118,7 +118,7 @@
 
   <!-- fasilitas pendukung section start -->
   <section class="py-30">
-    <div class="container mx-auto">
+    <div class="container mx-auto px-5 lg:px-0">
       <div class="flex justify-between items-center gap-10">
         <div class="w-full flex flex-col gap-5">
           <header>
@@ -127,7 +127,7 @@
             </h2>
           </header>
           <ul
-            class="list-image-[url({{ url('logo/check-mark.png') }})] text-md list-outside leading-10"
+            class="list-image-[url({{ url('logo/check-mark.png') }})] text-md list-inside lg:list-outside leading-10"
           >
             <li>
               <h2 class="text-md font-bold text-green-800">WIFI Coverage</h2>
@@ -143,7 +143,7 @@
             </li>
           </ul>
         </div>
-        <div class="grid grid-flow-col grid-rows-2 gap-2">
+        <div class="hidden lg:grid grid-flow-col grid-rows-2 gap-2">
           <figure>
             <img
               src="img/fasilitas/corridor.jpeg"

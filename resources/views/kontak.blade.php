@@ -6,8 +6,8 @@
 <div class="hero bg-green-200 min-h-fit pb-30 pt-50 text-green-900">
     <div class="hero-content text-center">
       <div class="max-w-xl">
-        <h1 class="text-5xl font-bold">Hubungi Kami</h1>
-        <p class="py-6">
+        <h1 class="text-2xl lg:text-5xl font-bold">Hubungi Kami</h1>
+        <p class="py-6 text-sm lg:text-base">
           Kami siap membantu anda. Silahkan hubungi kami melalui form di bawah
           ini atau kunjungi lokasi kami.
         </p>
@@ -18,8 +18,8 @@
 
   <!-- kontak section start -->
   <section class="py-30">
-    <div class="container mx-auto">
-      <div class="flex justify-between gap-10">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="flex flex-col lg:flex-row justify-between gap-10">
         <div
           class="flex flex-col gap-3 items-center p-10 rounded-xl shadow-xl w-full"
         >
@@ -58,9 +58,9 @@
 
   <!-- form section start -->
   <section class="py-30 bg-green-200">
-    <div class="container mx-auto">
+    <div class="container mx-auto px-5 lg:px-0">
       <div
-        class="flex justify-around gap-20 bg-white p-10 rounded-xl shadow-xl"
+        class="flex flex-col lg:flex-row justify-around gap-20 bg-white p-10 rounded-xl shadow-xl"
       >
         <div class="w-full">
           <header class="mb-5">
