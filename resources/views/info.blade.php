@@ -6,8 +6,8 @@
 <div class="hero bg-green-200 min-h-fit pb-30 pt-50 text-green-900">
     <div class="hero-content text-center">
       <div class="max-w-xl">
-        <h1 class="text-5xl font-bold">Informasi PPDB</h1>
-        <p class="py-6">
+        <h1 class="text-2xl lg:text-5xl font-bold">Informasi PPDB</h1>
+        <p class="py-6 text-sm lg:text-base">
           Temukan berita terbaru, pengumuman dan informasi penting seputar
           penerimaan peserta didik baru
         </p>
@@ -18,8 +18,8 @@
 
   <!-- about section start -->
   <section class="py-30">
-    <div class="container mx-auto">
-      <div class="w-full flex justify-between gap-10">
+    <div class="container mx-auto px-5 lg:px-0">
+      <div class="w-full flex flex-col lg:flex-row justify-between gap-10">
         <article class="w-full p-10 bg-green-100 rounded-xl shadow-xl">
           <p class="text-justify">
             Melakukan PPDB secara daring/online sehingga diharapkan proses
@@ -45,11 +45,11 @@
   <!-- about section end -->
 
   <!-- timeline section start -->
-  <section class="py-30 bg-green-200">
+  <section class="py-10 lg:py-30 bg-green-200">
     <header class="w-full text-center mb-10">
-      <h2 class="text-3xl font-bold">Penjelasan Prosedur</h2>
+      <h2 class="text-xl lg:text-3xl font-bold">Penjelasan Prosedur</h2>
     </header>
-    <div class="container mx-auto">
+    <div class="container mx-auto px-5 lg:px-0">
       <div>
         <ul
           class="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical"

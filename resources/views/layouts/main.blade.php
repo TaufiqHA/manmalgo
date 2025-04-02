@@ -77,7 +77,7 @@
       <div class="navbar-center">
         <div class="flex-1 flex items-center">
           <img src="logo/toga.png" alt="toga" class="w-10 h-10" />
-          <a class="btn btn-ghost text-xl hover:text-green-700">MAN 1 GOWA</a>
+          <a href="/" class="btn btn-ghost text-xl hover:text-green-700">MAN 1 GOWA</a>
         </div>
       </div>
       <div class="navbar-end">

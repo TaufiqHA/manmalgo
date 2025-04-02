@@ -6,8 +6,8 @@
 <div class="hero bg-green-200 min-h-fit pb-30 pt-50 text-green-900">
     <div class="hero-content text-center">
       <div class="max-w-xl">
-        <h1 class="text-5xl font-bold">Formulir Pendaftaran</h1>
-        <p class="py-6">
+        <h1 class="text-2xl lg:text-5xl font-bold">Formulir Pendaftaran</h1>
+        <p class="py-6 text-sm lg:text-base">
           Lengkapi Formulir dibawah ini untuk mendaftar di MAN 1 Gowa
         </p>
       </div>
@@ -17,10 +17,10 @@
 
   <!-- ketentuan section start -->
   <section class="py-30">
-    <header class="container mx-auto mb-3">
+    <header class="container mx-auto mb-3 px-5 lg:px-0">
       <h2 class="text-2xl font-bold text-green-700">Ketentuan</h2>
     </header>
-    <div class="container mx-auto">
+    <div class="container mx-auto px-5 lg:px-0">
       <div class="max-w-5xl">
         <ol class="list-decimal list-inside leading-7">
           <li>
@@ -57,14 +57,14 @@
 
   <!-- form section start -->
   <section class="py-10">
-    <div class="container mx-auto">
+    <div class="container mx-auto px-5 lg:px-0">
       <div>
         <!-- data pribadi -->
         <div class="w-full mb-4">
           <header class="mb-3">
             <h2 class="text-lg font-bold text-green-700">Data Pribadi</h2>
           </header>
-          <div class="grid grid-flow-col grid-rows-2 gap-4">
+          <div class="grid grid-flow-rows grid-col-1 lg:grid-flow-col lg:grid-rows-2 gap-4">
             <input
               type="text"
               placeholder="Nama Lengkap"
@@ -190,7 +190,7 @@
         </fieldset>
       </div>
 
-      <span class="flex gap-4 mt-4">
+      <span class="flex items-center gap-4 mt-4">
         <input type="checkbox" class="checkbox" />
         <p>Saya menyatakan bahwa data yang diisi adalah benar</p>
       </span>

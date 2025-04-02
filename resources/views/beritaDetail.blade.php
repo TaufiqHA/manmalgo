@@ -4,7 +4,7 @@
 
 <!-- berita section start -->
 <section class="py-30">
-    <div class="container mx-auto">
+    <div class="container mx-auto px-5 lg:px-0">
       <div class="flex flex-col justify-between gap-5">
         <header class="w-full flex flex-col gap-10">
           <!-- badge section start -->
@@ -15,7 +15,7 @@
           <!-- badge section end -->
 
           <!-- title section start -->
-          <h2 class="text-5xl text-green-700 font-bold">
+          <h2 class="text-2xl lg:text-5xl text-green-700 font-bold">
             Tim MAN 1 Gowa Raih Juara Umum Olimpiade Sains Nasional 2025
           </h2>
           <!-- title section end -->
@@ -37,8 +37,8 @@
           <!-- author section end -->
         </header>
 
-        <div class="w-full flex justify-between gap-10">
-          <div class="w-2/3">
+        <div class="w-full flex flex-col lg:flex-row justify-between gap-10">
+          <div class="w-full lg:w-2/3">
             <article class="mt-20">
               <div class="flex flex-col gap-10 justify-center items-center">
                 <figure>

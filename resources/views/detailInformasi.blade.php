@@ -6,7 +6,7 @@
 <div class="hero bg-green-200 min-h-fit pb-30 pt-50 text-green-900">
     <div class="container hero-content text-start">
       <div class="w-full">
-        <h1 class="text-5xl font-bold">
+        <h1 class="text-2xl lg:text-5xl font-bold">
           Pendaftaran Siswa Baru Tahun Ajaran 2025/2026
         </h1>
         <div class="flex gap-5 mt-10">
@@ -27,8 +27,8 @@
   <!-- informasi section start -->
   <section class="py-10">
     <div class="container mx-auto">
-      <div class="flex justify-between gap-10">
-        <div class="w-5xl">
+      <div class="flex flex-col lg:flex-row justify-between gap-10">
+        <div class="w-full lg:w-5xl">
           <div class="p-10 rounded-xl shadow-xl text-justify">
             <figure class="w-full flex justify-center">
               <img
@@ -52,7 +52,7 @@
               <li>Surat keterangan berkelakuan baik dari sekolah asal</li>
             </ul>
             <h2 class="mt-5 text-xl font-bold">Jadwal Pendaftaran</h2>
-            <div class="w-full flex gap-5">
+            <div class="w-full flex flex-col lg:flex-row gap-5">
               <div class="w-full mt-5">
                 <h2 class="text-lg font-semibold">Gelombang 1</h2>
                 <p>1 Februari - 31 Maret 2025</p>
@@ -79,7 +79,7 @@
             <br />
             <div>
               <h2 class="text-xl font-bold">Bagikan Informasi</h2>
-              <div class="flex gap-3 mt-5">
+              <div class="flex flex-col lg:flex-row gap-3 mt-5">
                 <!-- facebok -->
                 <button class="btn bg-[#1A77F2] text-white border-[#005fd8]">
                   <svg

@@ -209,7 +209,7 @@
             <img src="logo/eye.png" alt="eye logo" class="w-10 h-10" />
             <h2 class="text-lg font-bold">Visi</h2>
           </header>
-          <p class="text-md">
+          <p class="text-md text-center lg:text-start">
             Menjadi madrasah unggul yang menghasilkan lulusan beriman,
             berilmu, berakhlak mulia dan berdaya saing global.
           </p>
@@ -220,7 +220,7 @@
             <h2 class="text-lg font-bold">Misi</h2>
           </header>
           <ul
-            class="list-image-[url({{ url('logo/check-mark.png') }})] text-lg list-inside leading-10"
+            class="list-image-[url({{ url('logo/check-mark.png') }})] text-md lg:text-lg list-inside leading-10"
           >
             <li>Menyelenggarakan pendidikan islam yang berkualitas</li>
             <li>Mengembangkan pemebelajaran berbasis teknologi modern</li>
