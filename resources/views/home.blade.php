@@ -10,8 +10,8 @@
       <div class="hero-overlay"></div>
       <div class="hero-content text-neutral-content text-center">
         <div class="max-w-5xl">
-          <h1 class="mb-5 text-5xl font-bold">Selamat Datang di MAN 1 GOWA</h1>
-          <p class="mb-5">
+          <h1 class="mb-5 text-2xl lg:text-5xl font-bold">Selamat Datang di MAN 1 GOWA</h1>
+          <p class="mb-5 text-sm lg:text-base">
             Membentuk Generasi Unggul, Berakhlak Mulia dan Berwawasan Global
           </p>
           <a
