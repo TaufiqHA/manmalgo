@@ -18,7 +18,7 @@
   <!-- filter section start -->
   <section class="py-10">
     <div class="container mx-auto px-5 lg:px-0">
-      <div class="flex flex-col lg:flex-row justify-between">
+      <div class="flex flex-col lg:flex-row justify-center items-center lg:justify-between">
         <!-- search section start -->
         <label class="input">
           <svg
@@ -44,15 +44,9 @@
         <!-- search section end -->
 
         <!-- filter section start -->
-        <div class="w-xl flex flex-col lg:flex-row mt-5 lg:mt-0 gap-5">
+        <div class="w-full flex justify-center lg:justify-end mt-5 lg:mt-0">
           <select class="select">
             <option disabled selected>Tahun Lulus</option>
-            <option>Crimson</option>
-            <option>Amber</option>
-            <option>Velvet</option>
-          </select>
-          <select class="select">
-            <option disabled selected>Jurusan</option>
             <option>Crimson</option>
             <option>Amber</option>
             <option>Velvet</option>

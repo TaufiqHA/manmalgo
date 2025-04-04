@@ -29,7 +29,7 @@
     <div class="container mx-auto">
       <div class="flex flex-col lg:flex-row justify-between gap-10">
         <div class="w-full lg:w-5xl">
-          <div class="p-10 rounded-xl shadow-xl text-justify">
+          <div class="p-5 lg:p-10 rounded-xl shadow-xl text-justify">
             <figure class="w-full flex justify-center">
               <img
                 src="img/activity/Schools’ ‘land lab’ lives up to billing.jpeg"
@@ -38,7 +38,7 @@
               />
             </figure>
             <h2 class="mt-10 text-xl font-bold">Informasi Pendaftaran</h2>
-            <p class="mt-5 text-lg">
+            <p class="mt-5 text-md lg:text-lg">
               MAN 1 Gowa membuka pendaftaran siswa baru untuk tahun ajaran
               2025/2026. Kami mengundang para calon siswa yang berkualitas
               untuk bergabung dengan keluarga besar MAN 1 Gowa.
