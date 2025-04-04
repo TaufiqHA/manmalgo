@@ -29,6 +29,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            ->brandName('MAN 1 Gowa')
             ->colors([
                 'primary' => Color::Green,
             ])

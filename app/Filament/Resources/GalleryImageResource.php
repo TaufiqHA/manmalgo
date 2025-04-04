@@ -17,7 +17,7 @@ class GalleryImageResource extends Resource
 {
     protected static ?string $model = GalleryImage::class;
 
-    protected static ?string $navigationLabel = 'Galeri';
+    protected static ?string $navigationLabel = 'Image';
 
     protected static ?string $navigationIcon = 'heroicon-o-photo';
 
@@ -37,7 +37,8 @@ class GalleryImageResource extends Resource
                     ->required(),
                 Forms\Components\Textarea::make('description')
                     ->columnSpanFull(),
-            ]);
+            ])
+            ->columns(1);
     }
 
     public static function table(Table $table): Table

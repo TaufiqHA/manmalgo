@@ -2,9 +2,9 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\GalleryResource\Pages;
-use App\Filament\Resources\GalleryResource\RelationManagers;
-use App\Models\Gallery;
+use App\Filament\Resources\AlumniResource\Pages;
+use App\Filament\Resources\AlumniResource\RelationManagers;
+use App\Models\Alumni;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,15 +13,15 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class GalleryResource extends Resource
+class AlumniResource extends Resource
 {
-    protected static ?string $model = Gallery::class;
+    protected static ?string $model = Alumni::class;
 
-    protected static ?string $navigationLabel = "Gallery";
+    protected static ?string $navigationLabel = 'Alumni';
 
-    protected static ?string $navigationGroup = "Management Gallery";
+    protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
 
-    protected static ?string $navigationIcon = 'heroicon-o-tag';
+    protected static ?string $navigationGroup = 'Alumni Data';
 
     public static function form(Form $form): Form
     {
@@ -29,11 +29,15 @@ class GalleryResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required(),
-                Forms\Components\Textarea::make('description')
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('slug')
+                Forms\Components\FileUpload::make('image')
+                    ->image()
                     ->required(),
-                Forms\Components\Toggle::make('is_public')
+                Forms\Components\TextInput::make('angkatan')
+                    ->required()
+                    ->numeric(),
+                Forms\Components\TextInput::make('universitas')
+                    ->required(),
+                Forms\Components\TextInput::make('pekerjaan')
                     ->required(),
             ])
             ->columns(1);
@@ -45,10 +49,13 @@ class GalleryResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
+                Tables\Columns\ImageColumn::make('image'),
+                Tables\Columns\TextColumn::make('angkatan') 
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('universitas')
                     ->searchable(),
-                Tables\Columns\IconColumn::make('is_public')
-                    ->boolean(),
+                Tables\Columns\TextColumn::make('pekerjaan')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -81,9 +88,9 @@ class GalleryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListGalleries::route('/'),
-            'create' => Pages\CreateGallery::route('/create'),
-            'edit' => Pages\EditGallery::route('/{record}/edit'),
+            'index' => Pages\ListAlumnis::route('/'),
+            'create' => Pages\CreateAlumni::route('/create'),
+            'edit' => Pages\EditAlumni::route('/{record}/edit'),
         ];
     }
 }
