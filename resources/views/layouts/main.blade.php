@@ -148,6 +148,40 @@
     </footer>
     <!-- footer section end -->
 
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+      $(document).ready(function () {
+
+        $(document).on('click', '.filter', function (e) {
+          e.preventDefault();
+          $('.filter').removeClass('active').addClass('deactivate');
+          var data = $(this).data('filter');
+          $(this).removeClass('deactivate');
+          $(this).addClass('active');
+          
+          $.ajax({
+            type: "GET",
+            url: "{{ route('gallery.filter') }}",
+            data: {filter: data},
+            success: function (response) {
+              $('#gallery_image_section').html(response);
+            }
+          });
+        });
+
+        $('.filter-all').click(function (e) { 
+          e.preventDefault();
+          $('.filter').removeClass('active').addClass('deactivate');
+          $.ajax({
+            type: "GET",
+            url: "{{ route('gallery.all') }}",
+            success: function (response) {
+              $('#gallery_image_section').html(response);
+            }
+          });
+        });
+      });
+    </script>
     <script>
       feather.replace();
     </script>

@@ -12,3 +12,11 @@
         "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
         "Noto Color Emoji";
 }
+
+.active {
+    @apply bg-green-500 text-white;
+}
+
+.deactivate {
+    @apply bg-green-200 text-green-800;
+}

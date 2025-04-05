@@ -17,29 +17,17 @@
   <section class="py-10 border-b border-b-gray-200">
     <div class="container mx-auto px-5 lg:px-0">
       <div class="flex flex-wrap justify-center gap-3">
-        <button class="btn rounded-full bg-green-500 border-none text-white">
+        <button class="filter-all btn rounded-full active border-none">
           Semua
         </button>
-        <button
-          class="btn rounded-full bg-green-200 border-none text-green-800"
-        >
-          Akademik
-        </button>
-        <button
-          class="btn rounded-full bg-green-200 border-none text-green-800"
-        >
-          Prestasi
-        </button>
-        <button
-          class="btn rounded-full bg-green-200 border-none text-green-800"
-        >
-          Kegiatan Siswa
-        </button>
-        <button
-          class="btn rounded-full bg-green-200 border-none text-green-800"
-        >
-          Ekstrakurikuler
-        </button>
+        @foreach ($tags as $item)
+          <button
+            class="filter btn rounded-full deactivate border-none"
+            data-filter="{{ $item->id }}"
+          >
+            {{ $item->name }}
+          </button>  
+        @endforeach
       </div>
     </div>
   </section>
@@ -48,15 +36,8 @@
   <!-- galery section start -->
   <section class="py-30">
     <div class="container mx-auto px-5 lg:px-0">
-      <div id="album" class="w-full grid grid-flow-row grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-4">
-        <img src="img/album/1.jpeg" alt="1" />
-        <img src="img/album/2.jpeg" alt="2" />
-        <img src="img/album/3.jpeg" alt="3" />
-        <img src="img/album/4.jpeg" alt="4" />
-        <img src="img/album/5.jpeg" alt="5" />
-        <img src="img/album/6.jpeg" alt="6" />
-        <img src="img/album/7.jpeg" alt="7" />
-        <img src="img/album/8.jpeg" alt="8" />
+      <div id="gallery_image_section" class="w-full grid grid-flow-row grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-4">
+        @include('components.gallery-image')
       </div>
       <span class="w-full flex justify-center mt-8">
         <button class="btn bg-green-600 text-white rounded-xl">
