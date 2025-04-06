@@ -40,7 +40,7 @@
         @include('components.gallery-image')
       </div>
       <span class="w-full flex justify-center mt-8">
-        <button class="btn bg-green-600 text-white rounded-xl">
+        <button id="load-more" class="btn bg-green-600 text-white rounded-xl" data-next-page="{{ $galleries->currentPage() + 1 }}" >
           Muat Lebih banyak <i data-feather="arrow-down" width="18px"></i>
         </button>
       </span>
