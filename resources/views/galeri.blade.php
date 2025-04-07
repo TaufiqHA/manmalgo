@@ -36,7 +36,7 @@
   <!-- galery section start -->
   <section class="py-30">
     <div class="container mx-auto px-5 lg:px-0">
-      <div id="gallery_image_section" class="w-full grid grid-flow-row grid-cols-1 lg:grid-cols-4 gap-2 lg:gap-4">
+      <div id="gallery_image_section" class="w-full columns-2 lg:columns-3 gap-2 lg:gap-4">
         @include('components.gallery-image')
       </div>
       <span class="w-full flex justify-center mt-8">
@@ -49,3 +49,91 @@
   <!-- galery section end -->
 
 @endsection
+
+@push('script')
+  <script>
+    $(document).ready(function () {
+      var currentFilter = 'all';
+
+      $(document).on('click', '.filter', function (e) {
+        e.preventDefault();
+        $('.filter').removeClass('active').addClass('deactivate');
+        var data = $(this).data('filter');
+        $(this).removeClass('deactivate');
+        $(this).addClass('active');
+        $('.filter-all').removeClass('active').addClass('deactivate');
+        currentFilter = data;
+        var button = $('#load-more')
+        
+        $.ajax({
+          type: "GET",
+          url: "{{ route('gallery.filter') }}",
+          data: {filter: data},
+          success: function (response) {
+            $('#gallery_image_section').html(response.html);
+
+            if(response.next_page) {
+              button.data('next-page', response.next_page);
+              button.prop('disabled', false);
+              button.text('Load More');
+            } else {
+              button.remove();
+            }
+          }
+        });
+      });
+
+      $('#load-more').click(function (e) { 
+        e.preventDefault();
+        var button = $(this);
+        var nextPage = button.data('next-page')
+
+        if (nextPage) {
+                $.ajax({
+                    url: "{{ route('load.more') }}",
+                    type: 'GET',
+                    data: {page: nextPage, filter: currentFilter},
+                    beforeSend: function() {
+                        button.prop('disabled', true);
+                    },
+                    success: function(response) {
+                        // Tambahkan konten baru
+                        $('#gallery_image_section').append(response.html);
+                        
+                        // Update next page
+                        if (response.next_page) {
+                            button.data('next-page', response.next_page);
+                            button.prop('disabled', false);
+                            button.text('Load More');
+                        } else {
+                            // Sembunyikan tombol jika tidak ada halaman lagi
+                            button.remove();
+                        }
+                    },
+                    error: function(xhr) {
+                        console.log(xhr.responseText);
+                        button.prop('disabled', false);
+                        button.text('Load More');
+                    }
+                });
+            }
+      });
+
+      $('.filter-all').click(function (e) { 
+        e.preventDefault();
+        $(this).removeClass('deactivate').addClass('active');
+        $('.filter').removeClass('active').addClass('deactivate');
+        var button = $('#load-more');
+        var nextPage = button.data('next-page')
+
+        $.ajax({
+          type: "GET",
+          url: "{{ route('gallery.all') }}",
+          success: function (response) {
+            $('#content').html(response.html);
+          }
+        });
+      });
+    });
+  </script>
+@endpush

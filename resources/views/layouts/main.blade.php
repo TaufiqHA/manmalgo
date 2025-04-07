@@ -148,93 +148,10 @@
       <h2>&copy; MAN 1 Gowa. All rights reserved.</h2>
     </footer>
     <!-- footer section end -->
-
+    
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script>
-      $(document).ready(function () {
-        var currentFilter = 'all';
-
-        $(document).on('click', '.filter', function (e) {
-          e.preventDefault();
-          $('.filter').removeClass('active').addClass('deactivate');
-          var data = $(this).data('filter');
-          $(this).removeClass('deactivate');
-          $(this).addClass('active');
-          $('.filter-all').removeClass('active').addClass('deactivate');
-          currentFilter = data;
-          var button = $('#load-more')
-          
-          $.ajax({
-            type: "GET",
-            url: "{{ route('gallery.filter') }}",
-            data: {filter: data},
-            success: function (response) {
-              $('#gallery_image_section').html(response.html);
-
-              if(response.next_page) {
-                button.data('next-page', response.next_page);
-                button.prop('disabled', false);
-                button.text('Load More');
-              } else {
-                button.remove();
-              }
-            }
-          });
-        });
-
-        $('#load-more').click(function (e) { 
-          e.preventDefault();
-          var button = $(this);
-          var nextPage = button.data('next-page')
-
-          if (nextPage) {
-                  $.ajax({
-                      url: "{{ route('load.more') }}",
-                      type: 'GET',
-                      data: {page: nextPage, filter: currentFilter},
-                      beforeSend: function() {
-                          button.prop('disabled', true);
-                      },
-                      success: function(response) {
-                          // Tambahkan konten baru
-                          $('#gallery_image_section').append(response.html);
-                          
-                          // Update next page
-                          if (response.next_page) {
-                              button.data('next-page', response.next_page);
-                              button.prop('disabled', false);
-                              button.text('Load More');
-                          } else {
-                              // Sembunyikan tombol jika tidak ada halaman lagi
-                              button.remove();
-                          }
-                      },
-                      error: function(xhr) {
-                          console.log(xhr.responseText);
-                          button.prop('disabled', false);
-                          button.text('Load More');
-                      }
-                  });
-              }
-        });
-
-        $('.filter-all').click(function (e) { 
-          e.preventDefault();
-          $(this).removeClass('deactivate').addClass('active');
-          $('.filter').removeClass('active').addClass('deactivate');
-          var button = $('#load-more');
-          var nextPage = button.data('next-page')
-
-          $.ajax({
-            type: "GET",
-            url: "{{ route('gallery.all') }}",
-            success: function (response) {
-              $('#content').html(response.html);
-            }
-          });
-        });
-      });
-    </script>
+    @stack('script')
+    
     <script>
       feather.replace();
     </script>

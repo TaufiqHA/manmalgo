@@ -37,9 +37,7 @@
               <path d="m21 21-4.3-4.3"></path>
             </g>
           </svg>
-          <input type="search" class="grow" placeholder="Search" />
-          <kbd class="kbd kbd-sm">⌘</kbd>
-          <kbd class="kbd kbd-sm">K</kbd>
+          <input id="search-input" type="search" class="grow" placeholder="Search" />
         </label>
         <!-- search section end -->
 
@@ -47,9 +45,9 @@
         <div class="w-full flex justify-center lg:justify-end mt-5 lg:mt-0">
           <select class="select">
             <option disabled selected>Tahun Lulus</option>
-            <option>Crimson</option>
-            <option>Amber</option>
-            <option>Velvet</option>
+            @foreach (range(date('Y'), 2015) as $year)
+              <option value="{{ $year }}">{{ $year }}</option>
+            @endforeach
           </select>
         </div>
         <!-- filter section end -->
@@ -61,152 +59,17 @@
   <!-- alumni section start -->
   <section class="py-10 lg:py-30">
     <div class="container mx-auto px-5 lg:px-0">
-      <div class="w-full grid grid-flow-row grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-4">
-        <div class="p-10 shadow-xl rounded-xl">
-          <header class="flex gap-3 items-center mb-5">
-            <div class="avatar">
-              <div class="w-14 rounded-full">
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                />
-              </div>
-            </div>
-            <span>
-              <h2 class="text-md font-bold">Ahmad Fadillah</h2>
-              <p>Angkatan 2020</p>
-            </span>
-          </header>
-          <span class="flex gap-3 items-center">
-            <img src="logo/toga2.png" alt="toga" class="w-5 h-5" />
-            <p>Universitas Indonesia</p>
-          </span>
-          <span class="flex gap-3 items-center">
-            <img src="logo/briefcase.png" alt="briefcase" class="w-5 h-5" />
-            <p>Software Engineer at Google</p>
-          </span>
-        </div>
-        <div class="p-10 shadow-xl rounded-xl">
-          <header class="flex gap-3 items-center mb-5">
-            <div class="avatar">
-              <div class="w-14 rounded-full">
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                />
-              </div>
-            </div>
-            <span>
-              <h2 class="text-md font-bold">Ahmad Fadillah</h2>
-              <p>Angkatan 2020</p>
-            </span>
-          </header>
-          <span class="flex gap-3 items-center">
-            <img src="logo/toga2.png" alt="toga" class="w-5 h-5" />
-            <p>Universitas Indonesia</p>
-          </span>
-          <span class="flex gap-3 items-center">
-            <img src="logo/briefcase.png" alt="briefcase" class="w-5 h-5" />
-            <p>Software Engineer at Google</p>
-          </span>
-        </div>
-        <div class="p-10 shadow-xl rounded-xl">
-          <header class="flex gap-3 items-center mb-5">
-            <div class="avatar">
-              <div class="w-14 rounded-full">
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                />
-              </div>
-            </div>
-            <span>
-              <h2 class="text-md font-bold">Ahmad Fadillah</h2>
-              <p>Angkatan 2020</p>
-            </span>
-          </header>
-          <span class="flex gap-3 items-center">
-            <img src="logo/toga2.png" alt="toga" class="w-5 h-5" />
-            <p>Universitas Indonesia</p>
-          </span>
-          <span class="flex gap-3 items-center">
-            <img src="logo/briefcase.png" alt="briefcase" class="w-5 h-5" />
-            <p>Software Engineer at Google</p>
-          </span>
-        </div>
-        <div class="p-10 shadow-xl rounded-xl">
-          <header class="flex gap-3 items-center mb-5">
-            <div class="avatar">
-              <div class="w-14 rounded-full">
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                />
-              </div>
-            </div>
-            <span>
-              <h2 class="text-md font-bold">Ahmad Fadillah</h2>
-              <p>Angkatan 2020</p>
-            </span>
-          </header>
-          <span class="flex gap-3 items-center">
-            <img src="logo/toga2.png" alt="toga" class="w-5 h-5" />
-            <p>Universitas Indonesia</p>
-          </span>
-          <span class="flex gap-3 items-center">
-            <img src="logo/briefcase.png" alt="briefcase" class="w-5 h-5" />
-            <p>Software Engineer at Google</p>
-          </span>
-        </div>
-        <div class="p-10 shadow-xl rounded-xl">
-          <header class="flex gap-3 items-center mb-5">
-            <div class="avatar">
-              <div class="w-14 rounded-full">
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                />
-              </div>
-            </div>
-            <span>
-              <h2 class="text-md font-bold">Ahmad Fadillah</h2>
-              <p>Angkatan 2020</p>
-            </span>
-          </header>
-          <span class="flex gap-3 items-center">
-            <img src="logo/toga2.png" alt="toga" class="w-5 h-5" />
-            <p>Universitas Indonesia</p>
-          </span>
-          <span class="flex gap-3 items-center">
-            <img src="logo/briefcase.png" alt="briefcase" class="w-5 h-5" />
-            <p>Software Engineer at Google</p>
-          </span>
-        </div>
-        <div class="p-10 shadow-xl rounded-xl">
-          <header class="flex gap-3 items-center mb-5">
-            <div class="avatar">
-              <div class="w-14 rounded-full">
-                <img
-                  src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-                />
-              </div>
-            </div>
-            <span>
-              <h2 class="text-md font-bold">Ahmad Fadillah</h2>
-              <p>Angkatan 2020</p>
-            </span>
-          </header>
-          <span class="flex gap-3 items-center">
-            <img src="logo/toga2.png" alt="toga" class="w-5 h-5" />
-            <p>Universitas Indonesia</p>
-          </span>
-          <span class="flex gap-3 items-center">
-            <img src="logo/briefcase.png" alt="briefcase" class="w-5 h-5" />
-            <p>Software Engineer at Google</p>
-          </span>
-        </div>
+      <div id="card-container" class="w-full grid grid-flow-row grid-cols-1 lg:grid-cols-3 gap-2 lg:gap-4">
+        {{-- card start --}}
+        @include('components.card-alumni', ['alumnis' => $alumnis])
+        {{-- card end --}}
       </div>
     </div>
   </section>
   <!-- alumni section end -->
 
   <!-- pagination start -->
-  <section class="mb-10">
+  {{-- <section class="mb-10">
     <div class="container mx-auto">
       <div class="w-full flex justify-center">
         <div class="join">
@@ -218,7 +81,43 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> --}}
   <!-- pagination end -->
 
 @endsection
+
+@push('script')
+  <script>
+    $(document).ready(function () {
+      // fitur search
+      $('#search-input').on('keyup', function (e) {
+        let value = $(this).val();
+        
+        $.ajax({
+          type: "GET",
+          url: "{{ route('alumni.search') }}",
+          data: {'query': value},
+          success: function (response) {
+            $('#card-container').html(response.html)
+          }
+        });
+      });
+
+      // fitur filter
+      $('.select').change(function (e) { 
+        e.preventDefault();
+        var value = $(this).val();
+        console.info(value);
+
+        $.ajax({
+          type: "GET",
+          url: "{{ route('alumni.filter') }}",
+          data: {'filter': value},
+          success: function (response) {
+            $('#card-container').html(response.html)
+          }
+        });
+      });
+    });
+  </script>
+@endpush
