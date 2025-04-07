@@ -17,7 +17,7 @@
   <!-- hero section end -->
 
   <!-- filter section start -->
-  <section class="py-10 border-b border-b-gray-200">
+  {{-- <section class="py-10 border-b border-b-gray-200">
     <div class="container mx-auto px-5 lg:px-0">
       <div class="flex flex-wrap justify-center gap-3">
         <button class="btn rounded-full bg-green-500 border-none text-white">
@@ -45,7 +45,7 @@
         </button>
       </div>
     </div>
-  </section>
+  </section> --}}
   <!-- filter section end -->
 
   <!-- utama section start -->
@@ -56,30 +56,27 @@
       >
         <figure>
           <img
-            src="img/activity/Schools’ ‘land lab’ lives up to billing.jpeg"
+            src="{{ asset('storage/' . $headline->image) }}"
             alt="lab"
             class="rounded-xl w-5xl"
           />
         </figure>
         <div class="flex flex-col gap-10 justify-center p-10 lg:p-0">
-          <span class="badge bg-green-700 text-white">Prestasi</span>
-          <a href="/beritaDetail" class="text-lg lg:text-3xl font-bold text-green-800">
-            Tim Olimpiade MAN 1 Gowa Raih Juara Umum dalam Kompetisi Sains
-            Nasional
+          <span class="badge bg-green-700 text-white">{{ $headline->NewsKategory->name }}</span>
+          <a href="/berita/{{ $headline->id }}" class="text-lg lg:text-3xl font-bold text-green-800">
+            {{ $headline->title }}
           </a>
           <p class="text-sm lg:text-md">
-            Tim Olimpieade MAN 1 Gowa berhasil meraih prestasi membanggakan
-            dalam Kompetisi Sains Nasional (KSN) 2025 yang diselenggarakan di
-            Jakarta ...
+            {!! Str::limit($headline->content, 100) !!}
           </p>
           <div class="flex gap-3">
             <div class="flex items-center gap-2">
               <i data-feather="calendar" class="w-5 lg:w-10"></i>
-              <p class="text-sm lg:text-base">15 Mar 2025</p>
+              <p class="text-sm lg:text-base">{{ $headline->created_at->format('d M Y') }}</p>
             </div>
             <div class="flex items-center gap-2">
               <i data-feather="user" class="w-5 lg:w-10"></i>
-              <p class="text-sm lg:text-base">Admin</p>
+              <p class="text-sm lg:text-base">{{ $headline->user->name }}</p>
             </div>
           </div>
         </div>
@@ -92,100 +89,41 @@
   <section class="py-30">
     <div class="container mx-auto px-5 lg:px-0">
       <div class="flex flex-col lg:flex-row justify-between gap-10">
-        <div class="card bg-base-100 w-full shadow-sm">
-          <figure>
-            <img
-              src="img/activity/STC Continues to Host Free Summer Camps.jpeg"
-              alt="acitivity"
-            />
-          </figure>
-          <div class="card-body">
-            <span class="badge bg-green-100 text-green-700">Akademik</span>
-            <h2 class="card-title text-green-900">Pameran Karya Ilmiah Siswa 2025</h2>
-            <p class="mb-3">
-              Showcase hasil penelitian dan inovasi dari para siswa MAN 1 Gowa
-              dalam bidang sains dan teknologi ...
-            </p>
-            <div class="card-actions justify-between">
-              <div class="flex items-center gap-2">
-                <i data-feather="calendar"></i>
-                <p>15 Mar 2025</p>
-              </div>
-              <div class="flex gap-2 items-center">
-                <a href="#" class="font-semibold text-green-700"
-                >Selengkapnya</span
-              ></a>
-              <i data-feather="arrow-right" class="text-green-700"></i>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card bg-base-100 w-full shadow-sm">
-          <figure>
-            <img
-              src="img/activity/Greenpoint Kids Build Vertical Garden Farm with Help from Solar One and SYSTEM Program.jpeg"
-              alt="acitivity"
-            />
-          </figure>
-          <div class="card-body">
-            <span class="badge bg-green-100 text-green-700">Kegiatan Siswa</span>
-            <h2 class="card-title text-green-900">Festival Budaya Tahunan MAN 1 Gowa</h2>
-            <p>
-              Perayaan keberagaman budaya dalam ferstival yang menampilkan berbagai pertunjukan seni dan budaya ...
-            </p>
-            <div class="card-actions justify-between">
-              <div class="flex items-center gap-2">
-                <i data-feather="calendar"></i>
-                <p>15 Mar 2025</p>
-              </div>
-              <div class="flex gap-2 items-center">
-                <a href="#" class="font-semibold text-green-700"
-                >Selengkapnya</span
-              ></a>
-              <i data-feather="arrow-right" class="text-green-700"></i>
+        @foreach ($news as $item)
+          <div class="card bg-base-100 w-full shadow-sm">
+            <figure>
+              <img
+                src="{{ asset('storage/' . $item->image) }}"
+                alt="acitivity"
+              />
+            </figure>
+            <div class="card-body">
+              <span class="badge bg-green-100 text-green-700">{{ $item->NewsKategory->name }}</span>
+              <h2 class="card-title text-green-900">{{ $item->title }}</h2>
+              <p class="mb-3">
+                {!! Str::limit($item->content, 100) !!}
+              </p>
+              <div class="card-actions justify-between">
+                <div class="flex items-center gap-2">
+                  <i data-feather="calendar"></i>
+                  <p>{{ $item->created_at->format('d M Y') }}</p>
+                </div>
+                <div class="flex gap-2 items-center">
+                  <a href="/berita/{{ $item->id }}" class="font-semibold text-green-700"
+                  >Selengkapnya</span
+                ></a>
+                <i data-feather="arrow-right" class="text-green-700"></i>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
-        <div class="card bg-base-100 w-full shadow-sm">
-          <figure>
-            <img
-              src="img/activity/Schools’ ‘land lab’ lives up to billing.jpeg"
-              alt="acitivity"
-            />
-          </figure>
-          <div class="card-body">
-            <span class="badge bg-green-100 text-green-700">Pengumuman</span>
-            <h2 class="card-title text-green-900">Pembukaan Pendaftaran Siswa Baru 2025/2026</h2>
-            <p>
-              Infomasi lengkap mengenai prosedur dan persyaratan pendaftaran siswa baru tahun ajaran 2025/2026 ...
-            </p>
-            <div class="card-actions justify-between">
-              <div class="flex items-center gap-2">
-                <i data-feather="calendar"></i>
-                <p>15 Mar 2025</p>
-              </div>
-              <div class="flex gap-2 items-center">
-                <a href="#" class="font-semibold text-green-700"
-                >Selengkapnya</span
-              ></a>
-              <i data-feather="arrow-right" class="text-green-700"></i>
-              </div>
-            </div>
-          </div>
-        </div>
+          </div>  
+        @endforeach
       </div>
-      <div class="join w-full mt-10 flex justify-center">
-        <input
-          class="join-item btn btn-square bg-green-500 border-none"
-          type="radio"
-          name="options"
-          aria-label="1"
-          checked="checked" />
-        <input class="join-item btn btn-square" type="radio" name="options" aria-label="2" />
-        <input class="join-item btn btn-square" type="radio" name="options" aria-label="3" />
-        <input class="join-item btn btn-square" type="radio" name="options" aria-label="4" />
-      </div>
+      <span class="w-full flex justify-center mt-8">
+        <a href="#" id="load-more" class="btn bg-green-600 text-white rounded-xl mt-10" >
+          Muat Lebih banyak <i data-feather="arrow-right" width="18px"></i>
+        </a>
+      </span>
     </div>
   </section>
   <!-- pagination section end -->
@@ -205,18 +143,20 @@
             </h2>
             
           </header>
-          <div class="flex flex-col gap-5">
-            <div class="p-5 rounded-xl shadow-xl flex flex-col gap-3">
-              <p class="text-green-500">15 Jan 2025</p>
-              <a href="/detailInformasi" class="text-md font-semibold">Pendaftaran Siswa Baru 2025/2026</a>
-              <p>Informasi lengkap mengenai prosedur dan persyaratan pendaftaran ...</p>
-            </div>
-            <div class="p-5 rounded-xl shadow-xl flex flex-col gap-3">
-              <p class="text-green-500">15 Jan 2025</p>
-              <h2 class="text-md font-semibold">Pendaftaran Siswa Baru 2025/2026</h2>
-              <p>Informasi lengkap mengenai prosedur dan persyaratan pendaftaran ...</p>
-            </div>
+          <div id="information-container" class="flex flex-col gap-5">
+            @foreach ($informations as $item)
+              <div class="p-5 rounded-xl shadow-xl flex flex-col gap-3">
+                <p class="text-green-500">{{ $item->created_at->format('d M Y') }}</p>
+                <a href="/informasi/{{ $item->id }}" class="text-md font-semibold">{{ $item->title }}</a>
+                <p>{!! Str::limit($item->content, 100) !!}</p>
+              </div>
+            @endforeach
           </div>
+          <span class="w-full flex justify-center mt-8">
+            <a href="#" id="load-more" class="btn bg-green-600 text-white rounded-xl mt-10" >
+              Muat Lebih banyak <i data-feather="arrow-right" width="18px"></i>
+            </a>
+          </span>
          </div>
         <!-- pengumuman section end -->
 

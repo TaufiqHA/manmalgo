@@ -9,14 +9,14 @@
         <header class="w-full flex flex-col gap-10">
           <!-- badge section start -->
           <div class="flex gap-3 items-center">
-            <span class="badge bg-green-200 text-green-700">Prestasi</span>
-            <p>12 Jan 2025</p>
+            <span class="badge bg-green-200 text-green-700">{{ $news->NewsKategory->name }}</span>
+            <p>{{ $news->created_at->format('d M Y') }}</p>
           </div>
           <!-- badge section end -->
 
           <!-- title section start -->
           <h2 class="text-2xl lg:text-5xl text-green-700 font-bold">
-            Tim MAN 1 Gowa Raih Juara Umum Olimpiade Sains Nasional 2025
+            {{ $news->title }}
           </h2>
           <!-- title section end -->
 
@@ -30,7 +30,7 @@
               </div>
             </div>
             <span class="flex flex-col justify-center gap">
-              <h2 class="text-sm font-semibold">Ahmad Fauzi</h2>
+              <h2 class="text-sm font-semibold">{{ $news->user->name }}</h2>
               <p class="text-xs">Kepala Bidang Kesiswaan</p>
             </span>
           </div>
@@ -43,40 +43,13 @@
               <div class="flex flex-col gap-10 justify-center items-center">
                 <figure>
                   <img
-                    src="img/activity/Schools’ ‘land lab’ lives up to billing.jpeg"
+                    src="{{ asset('storage/' . $news->image) }}"
                     alt="activity"
                     class="w-2xl rounded-2xl"
                   />
                 </figure>
-                <div class="flex flex-col gap-5 text-justify">
-                  <p>
-                    Tim Olimpieade Sains MAN 1 Gowa berhasil meraih prestasi
-                    membanggakan dengna manyabet gelar jaura umum dalam ajang
-                    Olimpieade Sains Nasional (OSN) yang diselenggarakan di
-                    Jakarta. Prestasi ini merupakan hasil dari kerja keras dan
-                    dedikasi para siswa serta bimbingan intensif dari para
-                    guru pembimbing
-                  </p>
-                  <h2 class="text-lg font-bold">Persiapan Intensif</h2>
-                  <p>
-                    Persiapan tim OSN MAN 1 Gowa dimulai sejak 6 bulan sebelum
-                    kompetisi. Para siswa menjalani program pembinaan intensif
-                    yang meliputi:
-                  </p>
-                  <ul class="list-disc list-inside">
-                    <li>Pelatihan olimpieade setiap akhir pekan</li>
-                    <li>Simulasi kompetisi tingkat provinsi</li>
-                    <li>Mentoring dengan alumni berprestasi</li>
-                    <li>Studi literatur dan praktikum laboratorium</li>
-                  </ul>
-                  <h2 class="text-lg font-bold">Pencapaian Membanggakan</h2>
-                  <p>
-                    Dalam kompetisi ini, tim MAN 1 Gowa berhasil meraih total
-                    5 medali emas, 3 medali perak, dan 4 medali perunggu dari
-                    berbagai cabang lomba sains. Prestasi ini menjadi MAN 1
-                    Gowa sebagai sekoah dengan perolehan medali terbanyak dan
-                    berhak atas gelar juara umum.
-                  </p>
+                <div id="news-content" class="flex flex-col gap-5 text-justify">
+                  {!! $news->content !!}
                 </div>
               </div>
             </article>
@@ -107,7 +80,7 @@
               <div class="p-5 flex gap-3 items-center mt-4">
                 <figure>
                   <img
-                    src="img/activity/STC Continues to Host Free Summer Camps.jpeg"
+                    src="/img/activity/STC Continues to Host Free Summer Camps.jpeg"
                     alt="acitivity"
                     class="w-24 rounded-lg"
                   />
@@ -120,7 +93,7 @@
               <div class="p-5 flex gap-3 items-center mt-4">
                 <figure>
                   <img
-                    src="img/activity/STC Continues to Host Free Summer Camps.jpeg"
+                    src="/img/activity/STC Continues to Host Free Summer Camps.jpeg"
                     alt="acitivity"
                     class="w-24 rounded-lg"
                   />

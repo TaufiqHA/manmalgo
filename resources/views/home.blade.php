@@ -68,7 +68,7 @@
           keislaman dan pembelajaran modern.
         </p>
         <ul
-          class="list-image-[url({{ url('logo/check-mark.png') }})] text-sm lg:text-lg list-inside font-semibold leading-10"
+          class="list-image-[url('{{ url('/logo/check-mark.png') }}')] text-sm lg:text-lg list-inside font-semibold leading-10"
         >
           <li>Akreditasi A</li>
           <li>Program Unggulan Keagamaan</li>
@@ -220,7 +220,7 @@
             <h2 class="text-lg font-bold">Misi</h2>
           </header>
           <ul
-            class="list-image-[url({{ url('logo/check-mark.png') }})] text-md lg:text-lg list-inside leading-10"
+            class="list-image-[url('{{ url('logo/check-mark.png') }}')] text-md lg:text-lg list-inside leading-10"
           >
             <li>Menyelenggarakan pendidikan islam yang berkualitas</li>
             <li>Mengembangkan pemebelajaran berbasis teknologi modern</li>

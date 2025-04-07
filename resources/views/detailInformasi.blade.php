@@ -7,16 +7,16 @@
     <div class="container hero-content text-start">
       <div class="w-full">
         <h1 class="text-2xl lg:text-5xl font-bold">
-          Pendaftaran Siswa Baru Tahun Ajaran 2025/2026
+          {{ $information->title }}
         </h1>
         <div class="flex gap-5 mt-10">
           <div class="flex items-center gap-3">
             <i data-feather="calendar" class="w-5"></i>
-            <p class="text-sm">15 Januari 2025</p>
+            <p class="text-sm">{{ $information->created_at->format('d M Y') }}</p>
           </div>
           <div class="flex items-center gap-3">
             <i data-feather="user" class="w-5"></i>
-            <p class="text-sm">Admin</p>
+            <p class="text-sm">{{ $information->user->name }}</p>
           </div>
         </div>
       </div>
@@ -25,57 +25,12 @@
   <!-- hero section end -->
 
   <!-- informasi section start -->
-  <section class="py-10">
+  <section class="py-10" id="information">
     <div class="container mx-auto">
       <div class="flex flex-col lg:flex-row justify-between gap-10">
         <div class="w-full lg:w-5xl">
           <div class="p-5 lg:p-10 rounded-xl shadow-xl text-justify">
-            <figure class="w-full flex justify-center">
-              <img
-                src="img/activity/Schools’ ‘land lab’ lives up to billing.jpeg"
-                alt="activity"
-                class="w-2xl rounded-xl"
-              />
-            </figure>
-            <h2 class="mt-10 text-xl font-bold">Informasi Pendaftaran</h2>
-            <p class="mt-5 text-md lg:text-lg">
-              MAN 1 Gowa membuka pendaftaran siswa baru untuk tahun ajaran
-              2025/2026. Kami mengundang para calon siswa yang berkualitas
-              untuk bergabung dengan keluarga besar MAN 1 Gowa.
-            </p>
-            <h2 class="mt-5 text-xl font-bold">Persyaratan Pendaftaran :</h2>
-            <ul class="mt-5 list-disc list-inside text-md">
-              <li>Fotokopi ijazah/SKHUN SMP/MTs (3 lembar)</li>
-              <li>Pas foto berwarna 3x4 (4 lembar)</li>
-              <li>Fotokopi Kartu Keluarga (2 lembar)</li>
-              <li>Fotokopi Akta Kelahiran (2 lembar)</li>
-              <li>Surat keterangan berkelakuan baik dari sekolah asal</li>
-            </ul>
-            <h2 class="mt-5 text-xl font-bold">Jadwal Pendaftaran</h2>
-            <div class="w-full flex flex-col lg:flex-row gap-5">
-              <div class="w-full mt-5">
-                <h2 class="text-lg font-semibold">Gelombang 1</h2>
-                <p>1 Februari - 31 Maret 2025</p>
-              </div>
-              <div class="w-full mt-5">
-                <h2 class="text-lg font-semibold">Gelombang 2</h2>
-                <p>1 April - 30 Mei 2025</p>
-              </div>
-            </div>
-            <div
-              class="bg-green-100 border-2 border-green-200 rounded-xl p-5 mt-5"
-            >
-              <h2 class="text-lg font-bold text-green-700">
-                Informasi Penting :
-              </h2>
-              <ul class="list-disc mt-5 list-inside text-md text-green-600">
-                <li>
-                  Pendaftaran dapat dilakukan secara online atau offline
-                </li>
-                <li>Kuota terbatas untuk setiap gelombang</li>
-                <li>Seleksi meliputi tes akademik dan wawancara</li>
-              </ul>
-            </div>
+            {!! $information->content !!}
             <br />
             <div>
               <h2 class="text-xl font-bold">Bagikan Informasi</h2>

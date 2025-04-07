@@ -127,7 +127,7 @@
             </h2>
           </header>
           <ul
-            class="list-image-[url({{ url('logo/check-mark.png') }})] text-md list-inside lg:list-outside leading-10"
+            class="list-image-[url('{{ url('logo/check-mark.png') }}')] text-md list-inside lg:list-outside leading-10"
           >
             <li>
               <h2 class="text-md font-bold text-green-800">WIFI Coverage</h2>
