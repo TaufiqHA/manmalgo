@@ -23,4 +23,11 @@ class NewsController extends Controller
     {
         return view('beritaDetail', ['news' => $news]);
     }
+
+    public function all()
+    {
+        $news = News::all();
+
+        return view('News', ['news' => $news]);
+    }
 }

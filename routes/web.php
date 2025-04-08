@@ -32,20 +32,13 @@ Route::get('/alumni/filter', [AlumniController::class, 'filter'])->name('alumni.
 // berita
 Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
 Route::get('/berita/{news:id}', [NewsController::class, 'show'])->name('berita.show');
+Route::get('/beritaAll', [NewsController::class, 'all'])->name('berita.all');
 
 // informasi
 Route::get('/informasi/{information:id}', [InformasiController::class, 'show'])->name('informasi.show');
 
 Route::get('/kontak', function() {
     return view('kontak');
-});
-
-Route::get('/beritaDetail', function() {
-    return view('beritaDetail');
-});
-
-Route::get('/detailInformasi', function() {
-    return view('detailInformasi');
 });
 
 Route::get('/info', function() {

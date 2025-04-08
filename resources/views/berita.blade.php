@@ -120,7 +120,7 @@
         @endforeach
       </div>
       <span class="w-full flex justify-center mt-8">
-        <a href="#" id="load-more" class="btn bg-green-600 text-white rounded-xl mt-10" >
+        <a href="{{ route('berita.all') }}" id="load-more" class="btn bg-green-600 text-white rounded-xl mt-10" >
           Muat Lebih banyak <i data-feather="arrow-right" width="18px"></i>
         </a>
       </span>
@@ -152,11 +152,6 @@
               </div>
             @endforeach
           </div>
-          <span class="w-full flex justify-center mt-8">
-            <a href="#" id="load-more" class="btn bg-green-600 text-white rounded-xl mt-10" >
-              Muat Lebih banyak <i data-feather="arrow-right" width="18px"></i>
-            </a>
-          </span>
          </div>
         <!-- pengumuman section end -->
 
