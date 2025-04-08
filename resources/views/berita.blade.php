@@ -95,6 +95,7 @@
               <img
                 src="{{ asset('storage/' . $item->image) }}"
                 alt="acitivity"
+                class="w-full h-58 object-cover object-top"
               />
             </figure>
             <div class="card-body">

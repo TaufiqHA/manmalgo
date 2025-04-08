@@ -33,6 +33,8 @@ Route::get('/alumni/filter', [AlumniController::class, 'filter'])->name('alumni.
 Route::get('/berita', [NewsController::class, 'index'])->name('berita.index');
 Route::get('/berita/{news:id}', [NewsController::class, 'show'])->name('berita.show');
 Route::get('/beritaAll', [NewsController::class, 'all'])->name('berita.all');
+Route::get('/load-more-news', [NewsController::class, 'loadMore'])->name('berita.loadMore');
+Route::get('/filter-news', [NewsController::class, 'filter'])->name('berita.filter');
 
 // informasi
 Route::get('/informasi/{information:id}', [InformasiController::class, 'show'])->name('informasi.show');
