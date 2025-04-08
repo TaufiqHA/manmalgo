@@ -2,41 +2,37 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\GalleryResource\Pages;
-use App\Filament\Resources\GalleryResource\RelationManagers;
-use App\Models\Gallery;
+use App\Filament\Resources\KalenderAkademikResource\Pages;
+use App\Filament\Resources\KalenderAkademikResource\RelationManagers;
+use App\Models\KalenderAkademik;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
-use Filament\Forms\Set;
-use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class GalleryResource extends Resource
+class KalenderAkademikResource extends Resource
 {
-    protected static ?string $model = Gallery::class;
+    protected static ?string $model = KalenderAkademik::class;
 
-    protected static ?string $navigationLabel = "Gallery";
+    protected static ?string $navigationGroup = 'Academic Calendar';
 
-    protected static ?string $navigationGroup = "Management Gallery";
+    protected static ?string $navigationLabel = 'Calendar';
 
-    protected static ?string $navigationIcon = 'heroicon-o-tag';
+    protected static ?string $navigationIcon = 'heroicon-o-calendar';
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->live(onBlur: true)
-                    ->afterStateUpdated(fn(Set $set, ?string $state) => $set('slug', Str::slug($state))),
-                Forms\Components\Textarea::make('description')
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('slug')
-                    ->readOnly(),
+                Forms\Components\TextInput::make('title')
+                    ->required(),
+                Forms\Components\DatePicker::make('tanggal_mulai')
+                    ->required(),
+                Forms\Components\DatePicker::make('tanggal_selesai')
+                    ->required(),
             ])
             ->columns(1);
     }
@@ -45,10 +41,14 @@ class GalleryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('name')
+                Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('slug')
-                    ->searchable(),
+                Tables\Columns\TextColumn::make('tanggal_mulai')
+                    ->date()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('tanggal_selesai')
+                    ->date()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -81,9 +81,9 @@ class GalleryResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListGalleries::route('/'),
-            'create' => Pages\CreateGallery::route('/create'),
-            'edit' => Pages\EditGallery::route('/{record}/edit'),
+            'index' => Pages\ListKalenderAkademiks::route('/'),
+            'create' => Pages\CreateKalenderAkademik::route('/create'),
+            'edit' => Pages\EditKalenderAkademik::route('/{record}/edit'),
         ];
     }
 }

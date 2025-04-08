@@ -12,7 +12,7 @@ class GalleryController extends Controller
     public function index()
     {
         $tags = Gallery::all();
-        $galleries = GalleryImage::paginate(5);
+        $galleries = GalleryImage::paginate(6);
 
         return view('galeri', [
             'tags' => $tags,
@@ -25,9 +25,9 @@ class GalleryController extends Controller
         $filter = $request->input('filter', 'all');
 
         if($filter != 'all') {
-            $galleries = GalleryImage::where('gallery_id', $filter)->orderBy('created_at')->paginate(5, ['*'], 'page' , $request->page);    
+            $galleries = GalleryImage::where('gallery_id', $filter)->orderBy('created_at')->paginate(6, ['*'], 'page' , $request->page);    
         } else {
-            $galleries = GalleryImage::orderBy('created_at')->paginate(5, ['*'], 'page' , $request->page);
+            $galleries = GalleryImage::orderBy('created_at')->paginate(6, ['*'], 'page' , $request->page);
         }
 
         return response()->json([
@@ -39,7 +39,7 @@ class GalleryController extends Controller
     public function all()
     {
         $tags = Gallery::all();
-        $galleries = GalleryImage::paginate(5);
+        $galleries = GalleryImage::paginate(6);
 
         return response()->json([
             'html' => view('galeri', [
@@ -53,10 +53,10 @@ class GalleryController extends Controller
     {
         $filter = $request->input('filter', 'all');
 
-        $query = GalleryImage::paginate(5);
+        $query = GalleryImage::paginate(6);
 
         if($query != 'all') {
-            $query = GalleryImage::where('gallery_id', $filter)->paginate(5);
+            $query = GalleryImage::where('gallery_id', $filter)->paginate(6);
         }
 
         $galleries = $query;

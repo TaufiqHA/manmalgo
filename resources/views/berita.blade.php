@@ -163,24 +163,17 @@
                Kalender Akademik
             </h2>
             <div class="p-5 rounded-xl shadow-xl flex flex-col gap-4">
-              <div class="flex gap-4 items-center">
-                <figure class="p-2 bg-green-200 rounded-lg">
-                  <i data-feather="calendar" class="text-green-700"></i>
-                </figure>
-                <div>
-                  <h2 class="font-semibold">Ujian Tengah Semester</h2>
-                  <p>1-12 Februari 2025</p>
+              @foreach ($calendars as $item)
+                <div class="flex gap-4 items-center">
+                  <figure class="p-2 bg-green-200 rounded-lg">
+                    <i data-feather="calendar" class="text-green-700"></i>
+                  </figure>
+                  <div>
+                    <h2 class="font-semibold">{{ $item->title }}</h2>
+                    <p>{{ $item->tanggal_mulai->format('d M Y') .' - '. $item->tanggal_selesai->format('d M Y') }}</p>
+                  </div>
                 </div>
-              </div>
-              <div class="flex gap-4 items-center">
-                <figure class="p-2 bg-green-200 rounded-lg">
-                  <i data-feather="calendar" class="text-green-700"></i>
-                </figure>
-                <div>
-                  <h2 class="font-semibold">Ujian Tengah Semester</h2>
-                  <p>1-12 Februari 2025</p>
-                </div>
-              </div>
+              @endforeach
             </div>
           </header>
         </div>

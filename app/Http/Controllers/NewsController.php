@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Information;
+use App\Models\KalenderAkademik;
 use App\Models\News;
 use App\Models\NewsKategory;
 use Illuminate\Support\Str;
@@ -17,7 +18,10 @@ class NewsController extends Controller
         // informasi
         $informations = Information::orderBy('created_at', 'desc')->limit(3)->get();
 
-        return view('berita', ['headline' => $headline, 'news' => $news, 'informations' => $informations]);
+        // kalender akademik
+        $calendars = KalenderAkademik::orderBy('created_at', 'desc')->limit(3)->get();
+
+        return view('berita', ['headline' => $headline, 'news' => $news, 'informations' => $informations, 'calendars' => $calendars]);
     }
 
     public function show(News $news)
@@ -40,9 +44,9 @@ class NewsController extends Controller
 
         if($filter != 'all')
         {
-            $result = News::where('news_kategory_id', $filter)->orderBy('created_at')->paginate(6, ['*'], 'page', $request->page);
+            $result = News::where('news_kategory_id', $filter)->orderBy('created_at', 'desc')->paginate(6, ['*'], 'page', $request->page);
         } else {
-            $result = News::orderBy('created_at')->paginate(6, ['*'], 'page', $request->page);
+            $result = News::orderBy('created_at', 'desc')->paginate(6, ['*'], 'page', $request->page);
         }
 
         $news = $result;
@@ -58,7 +62,7 @@ class NewsController extends Controller
         $filter = $request->input('filter', 'all');
 
         if($filter != 'all') {
-            $news = News::where('news_kategory_id', $filter)->paginate(6);
+            $news = News::where('news_kategory_id', $filter)->orderBy('created_at', 'desc')->paginate(6);
         }
 
         return response()->json([

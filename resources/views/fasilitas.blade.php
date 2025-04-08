@@ -21,7 +21,7 @@
       <div class="flex flex-col lg:flex-row justify-between gap-10">
         <div class="card bg-base-100 w-full shadow-md">
           <figure>
-            <img src="img/fasilitas/lab.jpg" alt="lab" class="rounded-xl" />
+            <img src="img/fasilitas/lab.jpg" alt="lab" class="rounded-xl w-full h-64 object-cover onject-top" />
           </figure>
           <div class="card-body items-start text-start">
             <h2 class="card-title text-start text-green-800">
@@ -38,7 +38,7 @@
             <img
               src="img/fasilitas/library.jpg"
               alt="library"
-              class="rounded-xl"
+              class="rounded-xl w-full h-68 object-cover object-top"
             />
           </figure>
           <div class="card-body items-start text-start">
@@ -56,7 +56,7 @@
             <img
               src="img/fasilitas/mosque.jpg"
               alt="mosque"
-              class="rounded-xl"
+              class="rounded-xl w-full h-68 object-cover object-top"
             />
           </figure>
           <div class="card-body items-start text-start">
