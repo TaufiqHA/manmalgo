@@ -74,9 +74,9 @@
                 class="input w-full @error('nama_lengkap') border-red-500 @enderror"
                 value="{{ old('nama_lengkap') }}"
               />
-              @error('nama_lengkap')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-nama_lengkap">
+                @error('nama_lengkap') {{ $message }} @enderror
+              </div>
             </div>
             <div>
               <input
@@ -86,9 +86,9 @@
                 class="input w-full @error('tempat_lahir') border-red-500 @enderror"
                 value="{{ old('tempat_lahir') }}"
               />
-              @error('tempat_lahir')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-tempat_lahir">
+                @error('tempat_lahir') {{ $message }} @enderror
+              </div>
             </div>
             <div>
               <input 
@@ -98,9 +98,9 @@
                 class="input w-full @error('nisn') border-red-500 @enderror"
                 value="{{ old('nisn') }}"
               />
-              @error('nisn')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-nisn">
+                @error('nisn') {{ $message }} @enderror
+              </div>
             </div>
             <div>
               <input 
@@ -109,9 +109,9 @@
                 class="input w-full @error('tanggal_lahir') border-red-500 @enderror"
                 value="{{ old('tanggal_lahir') }}"
               />
-              @error('tanggal_lahir')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-tanggal_lahir">
+                @error('tanggal_lahir') {{ $message }} @enderror
+              </div>
             </div>
           </div>
           <div class="mt-4">
@@ -120,9 +120,9 @@
               <option value="laki-laki" {{ old('jenis_kelamin') == 'laki-laki' ? 'selected' : '' }}>Laki-laki</option>
               <option value="perempuan" {{ old('jenis_kelamin') == 'perempuan' ? 'selected' : '' }}>Perempuan</option>
             </select>
-            @error('jenis_kelamin')
-              <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-            @enderror
+            <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-jenis_kelamin">
+              @error('jenis_kelamin') {{ $message }} @enderror
+            </div>
           </div>
         </div>
       </div>
@@ -142,9 +142,9 @@
                 class="input w-full @error('email') border-red-500 @enderror"
                 value="{{ old('email') }}"
               />
-              @error('email')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-email">
+                @error('email') {{ $message }} @enderror
+              </div>
             </div>
             <div>
               <input
@@ -154,9 +154,9 @@
                 class="input w-full @error('nomor_telepon') border-red-500 @enderror"
                 value="{{ old('nomor_telepon') }}"
               />
-              @error('nomor_telepon')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-nomor_telepon">
+                @error('nomor_telepon') {{ $message }} @enderror
+              </div>
             </div>
             <div>
               <textarea
@@ -164,9 +164,9 @@
                 class="textarea w-full h-40 @error('alamat_lengkap') border-red-500 @enderror"
                 placeholder="Alamat Lengkap"
               >{{ old('alamat_lengkap') }}</textarea>
-              @error('alamat_lengkap')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-alamat_lengkap">
+                @error('alamat_lengkap') {{ $message }} @enderror
+              </div>
             </div>
           </div>
         </div>
@@ -186,9 +186,9 @@
               class="input w-full @error('asal_sekolah') border-red-500 @enderror"
               value="{{ old('asal_sekolah') }}"
             />
-            @error('asal_sekolah')
-              <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-            @enderror
+            <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-asal_sekolah">
+              @error('asal_sekolah') {{ $message }} @enderror
+            </div>
           </div>
           <div class="flex justify-between gap-4">
             <div class="flex-1">
@@ -199,9 +199,9 @@
                 class="input w-full @error('nilai_bahasa_indonesia') border-red-500 @enderror"
                 value="{{ old('nilai_bahasa_indonesia') }}"
               />
-              @error('nilai_bahasa_indonesia')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-nilai_bahasa_indonesia">
+                @error('nilai_bahasa_indonesia') {{ $message }} @enderror
+              </div>
             </div>
             <div class="flex-1">
               <input
@@ -211,9 +211,9 @@
                 class="input w-full @error('nilai_matematika') border-red-500 @enderror"
                 value="{{ old('nilai_matematika') }}"
               />
-              @error('nilai_matematika')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-nilai_matematika">
+                @error('nilai_matematika') {{ $message }} @enderror
+              </div>
             </div>
             <div class="flex-1">
               <input
@@ -223,9 +223,9 @@
                 class="input w-full @error('nilai_bahasa_inggris') border-red-500 @enderror"
                 value="{{ old('nilai_bahasa_inggris') }}"
               />
-              @error('nilai_bahasa_inggris')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-nilai_bahasa_inggris">
+                @error('nilai_bahasa_inggris') {{ $message }} @enderror
+              </div>
             </div>
           </div>
         </div>
@@ -246,9 +246,9 @@
                 class="input w-full @error('nama_ayah') border-red-500 @enderror"
                 value="{{ old('nama_ayah') }}"
               />
-              @error('nama_ayah')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-nama_ayah">
+                @error('nama_ayah') {{ $message }} @enderror
+              </div>
             </div>
             <div>
               <input 
@@ -258,9 +258,9 @@
                 class="input w-full @error('nama_ibu') border-red-500 @enderror"
                 value="{{ old('nama_ibu') }}"
               />
-              @error('nama_ibu')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-nama_ibu">
+                @error('nama_ibu') {{ $message }} @enderror
+              </div>
             </div>
             <div>
               <input
@@ -270,9 +270,9 @@
                 class="input w-full @error('pekerjaan_ayah') border-red-500 @enderror"
                 value="{{ old('pekerjaan_ayah') }}"
               />
-              @error('pekerjaan_ayah')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-pekerjaan_ayah">
+                @error('pekerjaan_ayah') {{ $message }} @enderror
+              </div>
             </div>
             <div>
               <input
@@ -282,9 +282,9 @@
                 class="input w-full @error('pekerjaan_ibu') border-red-500 @enderror"
                 value="{{ old('pekerjaan_ibu') }}"
               />
-              @error('pekerjaan_ibu')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-              @enderror
+              <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-pekerjaan_ibu">
+                @error('pekerjaan_ibu') {{ $message }} @enderror
+              </div>
             </div>
           </div>
           <div class="mt-4">
@@ -295,9 +295,9 @@
               class="input w-full @error('nomor_telepon_orang_tua') border-red-500 @enderror"
               value="{{ old('nomor_telepon_orang_tua') }}"
             />
-            @error('nomor_telepon_orang_tua')
-              <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-            @enderror
+            <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-nomor_telepon_orang_tua">
+              @error('nomor_telepon_orang_tua') {{ $message }} @enderror
+            </div>
           </div>
         </div>
       </div>
@@ -312,9 +312,9 @@
             <legend class="fieldset-legend">Foto (3x4)</legend>
             <input name="foto" type="file" class="file-input" />
             <label class="fieldset-label">Max size 2MB</label>
-            @error('foto')
-              <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-            @enderror
+            <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-foto">
+              @error('foto') {{ $message }} @enderror
+            </div>
           </fieldset>
           <fieldset class="fieldset @error('ijazah_surat_keterangan_lulus') border-red-500 @enderror">
             <legend class="fieldset-legend">
@@ -322,33 +322,34 @@
             </legend>
             <input name="ijazah_surat_keterangan_lulus" type="file" class="file-input" />
             <label class="fieldset-label">Max size 2MB</label>
-            @error('ijazah_surat_keterangan_lulus')
-              <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-            @enderror
+            <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-ijazah_surat_keterangan_lulus">
+              @error('ijazah_surat_keterangan_lulus') {{ $message }} @enderror
+            </div>
           </fieldset>
           <fieldset class="fieldset @error('kartu_keluarga') border-red-500 @enderror">
             <legend class="fieldset-legend">Kartu Keluarga</legend>
             <input name="kartu_keluarga" type="file" class="file-input" />
             <label class="fieldset-label">Max size 2MB</label>
-            @error('kartu_keluarga')
-              <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-            @enderror
+            <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-kartu_keluarga">
+              @error('kartu_keluarga') {{ $message }} @enderror
+            </div>
           </fieldset>
         </div>
       </div>
 
       <span class="flex items-center gap-4 mt-4">
-        <input 
+        <input
+          id="confirm"
           type="checkbox" 
           class="checkbox @error('persetujuan') border-red-500 @enderror" 
           name="persetujuan"
           {{ old('persetujuan') ? 'checked' : '' }}
         />
-        <p>Saya menyatakan bahwa data yang diisi adalah benar</p>
+        <p id="confirm-text">Saya menyatakan bahwa data yang diisi adalah benar</p>
       </span>
-      @error('persetujuan')
-        <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-      @enderror
+      <div class="hidden text-red-500 text-sm mt-1 error-message" id="error-persetujuan">
+        @error('persetujuan') {{ $message }} @enderror
+      </div>
 
       <button
         type="submit"
@@ -375,25 +376,35 @@
         e.preventDefault();
         let data = new FormData(this);
 
-        $.ajax({
-          type: "POST",
-          url: "{{ route('pendaftaran.store') }}",
-          data: data,
-          processData: false,  // Penting!
-          contentType: false,  // Penting!
+        if($('#confirm').is(':checked')) {
+          $.ajax({
+            type: "POST",
+            url: "{{ route('pendaftaran.store') }}",
+            data: data,
+            processData: false,  // Penting!
+            contentType: false,  // Penting!
 
-          success: function (response) {
-            $('#alert').removeClass('alert-hidden').fadeIn();
-            setTimeout(() => {
-              $('#alert').fadeOut();
-            }, 3000);
-          },
+            success: function (response) {
+              $('#alert').removeClass('alert-hidden').fadeIn();
+              setTimeout(() => {
+                $('#alert').fadeOut();
+              }, 3000);
+            },
 
-          error: function (xhr) {
-            let errors = xhr.responseJSON.errors;
-            console.error(errors);
-          }
-        });
+            error: function (xhr) {
+              let errors = xhr.responseJSON.errors;
+              $.each(errors, function(key, value) {
+                  $('#error-' + key).removeClass('hidden')
+                  $('#error-' + key).html(
+                      '<p class="text-red-500 text-sm mt-1">' + value[0] + '</p>'
+                  );
+              });
+            }
+          });
+        } else {
+          $('#confirm').addClass('border-red-500');
+          $('#confirm-text').addClass('text-red-500');
+        }
       });
     });
   </script>

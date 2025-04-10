@@ -38,7 +38,7 @@
             <img
               src="img/fasilitas/library.jpg"
               alt="library"
-              class="rounded-xl w-full h-68 object-cover object-top"
+              class="rounded-xl w-full h-64 object-cover object-top"
             />
           </figure>
           <div class="card-body items-start text-start">
@@ -56,7 +56,7 @@
             <img
               src="img/fasilitas/mosque.jpg"
               alt="mosque"
-              class="rounded-xl w-full h-68 object-cover object-top"
+              class="rounded-xl w-full h-64 object-cover object-top"
             />
           </figure>
           <div class="card-body items-start text-start">
