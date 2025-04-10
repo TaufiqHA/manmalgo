@@ -122,11 +122,9 @@
             </div>
             <div class="timeline-start mb-10 md:text-end">
               <time class="font-mono italic">3</time>
-              <div class="text-lg font-black">Login</div>
+              <div class="text-lg font-black">Cek Status Pendaftaran</div>
               Calon peserta didik baru yang sudah melakukan pendaftaran dan
-              ingin login ke Sistem PPDB dapat menggunakan No. Pendaftaran
-              sebagai user (sesuaikan dengan Formulir No. Pendaftaran) & NISN
-              calon peserta didik sebagai PASSWORD-nya.
+              ingin mengetahui status pendaftaran dapat menggunakan nama lengkap dan NISN.
             </div>
             <hr />
           </li>
@@ -138,16 +136,76 @@
           >
             Mulai Pendaftaran
           </a>
-          <a
-            href="{{ route('pendaftaran.create') }}"
+          <button
+            onclick="cek_status_modal.showModal()"
             class="px-3 py-5 bg-white text-green-700 w-fit rounded-xl lg:mt-10"
           >
             Cek Status Pendaftaran
-          </a>
+        </button>
         </div>
       </div>
     </div>
   </section>
   <!-- timeline section end -->
 
+  {{-- modal section start --}}
+  <dialog id="cek_status_modal" class="modal">
+    <div class="modal-box">
+      <h3 class="text-lg font-bold">Cek Status Pendaftaran</h3>
+      <fieldset class="fieldset mt-2">
+        <legend class="fieldset-legend">Nama Lengkap</legend>
+        <input id="nama" type="text" class="input w-full" placeholder="nama" />
+        {{-- <p class="fieldset-label">Optional</p> --}}
+      </fieldset>
+      <fieldset class="fieldset mt-2">
+        <legend class="fieldset-legend">NISN</legend>
+        <input id="nisn" type="text" class="input w-full" placeholder="nisn" />
+        {{-- <p class="fieldset-label">Optional</p> --}}
+      </fieldset>
+      <div class="w-full flex justify-center">
+        <button id="status-button" class="btn btn-success mt-2 text-white">Cek Status</button>
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
+
+  {{-- result modal --}}
+  <dialog id="status_modal" class="modal">
+    <div class="modal-box">
+      <h3 class="text-lg font-bold">Cek Status Pendaftaran</h3>
+      <div id="result-container" class="mt-5 flex flex-col gap-4">
+        @include('components.status-pendaftaran', ['result' => $result])
+      </div>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>
+  {{-- modal section end --}}
+
 @endsection
+
+@push('script')
+  <script>
+    $(document).ready(function () {
+      $('#status-button').click(function (e) { 
+        e.preventDefault();
+        var nama = $('#nama').val();
+        var nisn = $('#nisn').val();
+
+        $.ajax({
+          type: "GET",
+          url: "{{ route('pendaftaran.status') }}",
+          data: {nama: nama, nisn: nisn},
+          success: function (response) {
+            $('#cek_status_modal')[0].close();
+            $('#status_modal')[0].showModal();
+            $('#result-container').html(response.html);
+          }
+        });
+      });
+    });
+  </script>
+@endpush

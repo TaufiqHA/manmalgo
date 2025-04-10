@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Pendaftaran;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -9,7 +10,13 @@ class PendaftaranController extends Controller
 {
     public function index()
     {
-        return view('info');
+        $result = (object)[
+            'nama_lengkap' => '-',
+            'nisn' => '-',
+            'status_pendaftaran' => '-'
+        ];
+
+        return view('info', ['result'=> $result]);
     }
 
     public function create()
@@ -81,5 +88,14 @@ class PendaftaranController extends Controller
         DB::table('pendaftarans')->insert($validated);
 
         return redirect()->route('pendaftaran.create')->with(['success' => 'Pendaftaran Berhasil']);
+    }
+
+    public function cek(Request $request)
+    {
+        $result = Pendaftaran::where('nama_lengkap', $request->nama)->where('nisn', $request->nisn)->first();
+
+        return response()->json([
+            'html' => view('components.status-pendaftaran', ['result'=> $result])->render()
+        ]);
     }
 }

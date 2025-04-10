@@ -48,3 +48,4 @@ Route::get('/kontak', function() {
 Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran.index');
 Route::get('/pendaftaran/create',[PendaftaranController::class, 'create'])->name('pendaftaran.create');
 Route::post('/pendaftaran/store', [PendaftaranController::class, 'store'])->name('pendaftaran.store');
+Route::get('/cekStatus', [PendaftaranController::class, 'cek'])->name('pendaftaran.status');
