@@ -131,7 +131,7 @@
             <hr />
           </li>
         </ul>
-        <div class="w-full flex gap-5 justify-center mt-10">
+        <div class="w-full flex flex-col items-center gap-2 lg:flex-row lg:gap-5 justify-center mt-10">
           <a
             href="{{ route('pendaftaran.create') }}"
             class="px-3 py-5 bg-white text-green-700 w-fit rounded-xl mt-10"
@@ -140,7 +140,7 @@
           </a>
           <a
             href="{{ route('pendaftaran.create') }}"
-            class="px-3 py-5 bg-white text-green-700 w-fit rounded-xl mt-10"
+            class="px-3 py-5 bg-white text-green-700 w-fit rounded-xl lg:mt-10"
           >
             Cek Status Pendaftaran
           </a>
