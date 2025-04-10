@@ -297,7 +297,7 @@
         Gowa
       </p>
       <a
-        href="/info"
+        href="{{ route('pendaftaran.index') }}"
         class="px-3 py-5 bg-white text-green-700 w-[200px] lg:w-md rounded-xl mt-10"
       >
         Informasi Pendaftaran

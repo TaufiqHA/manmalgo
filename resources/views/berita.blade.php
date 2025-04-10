@@ -50,38 +50,40 @@
 
   <!-- utama section start -->
   <section class="py-10">
-    <div class="container mx-auto px-5 lg:px-0">
-      <div
-        class="flex flex-col lg:flex-row justify-between w-full p-0 lg:p-10 bg-green-100 rounded-xl gap-10"
-      >
-        <figure>
-          <img
-            src="{{ asset('storage/' . $headline->image) }}"
-            alt="lab"
-            class="rounded-xl w-5xl"
-          />
-        </figure>
-        <div class="flex flex-col gap-10 justify-center p-10 lg:p-0">
-          <span class="badge bg-green-700 text-white">{{ $headline->NewsKategory->name }}</span>
-          <a href="/berita/{{ $headline->id }}" class="text-lg lg:text-3xl font-bold text-green-800">
-            {{ $headline->title }}
-          </a>
-          <p class="text-sm lg:text-md">
-            {!! Str::limit($headline->content, 100) !!}
-          </p>
-          <div class="flex gap-3">
-            <div class="flex items-center gap-2">
-              <i data-feather="calendar" class="w-5 lg:w-10"></i>
-              <p class="text-sm lg:text-base">{{ $headline->created_at->format('d M Y') }}</p>
-            </div>
-            <div class="flex items-center gap-2">
-              <i data-feather="user" class="w-5 lg:w-10"></i>
-              <p class="text-sm lg:text-base">{{ $headline->user->name }}</p>
+    @if ($headline)
+      <div class="container mx-auto px-5 lg:px-0">
+        <div
+          class="flex flex-col lg:flex-row justify-between w-full p-0 lg:p-10 bg-green-100 rounded-xl gap-10"
+        >
+          <figure>
+            <img
+              src="{{ asset('storage/' . $headline->image) }}"
+              alt="lab"
+              class="rounded-xl w-5xl"
+            />
+          </figure>
+          <div class="flex flex-col gap-10 justify-center p-10 lg:p-0">
+            <span class="badge bg-green-700 text-white">{{ $headline->NewsKategory->name }}</span>
+            <a href="/berita/{{ $headline->id }}" class="text-lg lg:text-3xl font-bold text-green-800">
+              {{ $headline->title }}
+            </a>
+            <p class="text-sm lg:text-md">
+              {!! Str::limit($headline->content, 100) !!}
+            </p>
+            <div class="flex gap-3">
+              <div class="flex items-center gap-2">
+                <i data-feather="calendar" class="w-5 lg:w-10"></i>
+                <p class="text-sm lg:text-base">{{ $headline->created_at->format('d M Y') }}</p>
+              </div>
+              <div class="flex items-center gap-2">
+                <i data-feather="user" class="w-5 lg:w-10"></i>
+                <p class="text-sm lg:text-base">{{ $headline->user->name }}</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    @endif
   </section>
   <!-- utama section end -->
 
@@ -120,11 +122,13 @@
           </div>  
         @endforeach
       </div>
-      <span class="w-full flex justify-center mt-8">
-        <a href="{{ route('berita.all') }}" id="load-more" class="btn bg-green-600 text-white rounded-xl mt-10" >
-          Muat Lebih banyak <i data-feather="arrow-right" width="18px"></i>
-        </a>
-      </span>
+      @if ($headline)
+        <span class="w-full flex justify-center mt-8">
+          <a href="{{ route('berita.all') }}" id="load-more" class="btn bg-green-600 text-white rounded-xl mt-10" >
+            Muat Lebih banyak <i data-feather="arrow-right" width="18px"></i>
+          </a>
+        </span>
+      @endif
     </div>
   </section>
   <!-- pagination section end -->

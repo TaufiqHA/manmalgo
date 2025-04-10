@@ -5,6 +5,7 @@ use App\Http\Controllers\NewsController;
 use App\Http\Controllers\AlumniController;
 use App\Http\Controllers\GalleryController;
 use App\Http\Controllers\InformasiController;
+use App\Http\Controllers\PendaftaranController;
 
 Route::get('/', function () {
     return view('home');
@@ -43,10 +44,7 @@ Route::get('/kontak', function() {
     return view('kontak');
 });
 
-Route::get('/info', function() {
-    return view("info");
-});
-
-Route::get('/pendaftaran', function() {
-    return view('pendaftaran');
-});
+// pendaftaran
+Route::get('/pendaftaran', [PendaftaranController::class, 'index'])->name('pendaftaran.index');
+Route::get('/pendaftaran/create',[PendaftaranController::class, 'create'])->name('pendaftaran.create');
+Route::post('/pendaftaran/store', [PendaftaranController::class, 'store'])->name('pendaftaran.store');

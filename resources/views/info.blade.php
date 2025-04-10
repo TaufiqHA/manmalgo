@@ -131,12 +131,18 @@
             <hr />
           </li>
         </ul>
-        <div class="w-full flex justify-center mt-10">
+        <div class="w-full flex gap-5 justify-center mt-10">
           <a
-            href="/pendaftaran"
+            href="{{ route('pendaftaran.create') }}"
             class="px-3 py-5 bg-white text-green-700 w-fit rounded-xl mt-10"
           >
             Mulai Pendaftaran
+          </a>
+          <a
+            href="{{ route('pendaftaran.create') }}"
+            class="px-3 py-5 bg-white text-green-700 w-fit rounded-xl mt-10"
+          >
+            Cek Status Pendaftaran
           </a>
         </div>
       </div>
