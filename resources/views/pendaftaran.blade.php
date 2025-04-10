@@ -3,15 +3,7 @@
 @section('main')
 
 <!-- hero section start -->
-  <div class="hero bg-green-200 min-h-fit pb-30 pt-50 text-green-900 relative">
-    @if ($message = Session::get('success'))
-      <div role="alert" class="absolute right-5 -top-30 alert alert-success transition duration-300 origin-right">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-        <span>{{ $message }}</span>
-      </div>
-    @endif
+  <div class="hero bg-green-200 min-h-fit pb-30 pt-50 text-green-900">
     <div class="hero-content text-center">
       <div class="max-w-xl">
         <h1 class="text-2xl lg:text-5xl font-bold">Formulir Pendaftaran</h1>
@@ -65,7 +57,7 @@
 
   <!-- form section start -->
   <section class="py-10">
-    <form class="container mx-auto px-5 lg:px-0" action="{{ route('pendaftaran.store') }}" method="POST" enctype="multipart/form-data">
+    <form id="form-pendaftaran" class="container mx-auto px-5 lg:px-0" enctype="multipart/form-data">
       @csrf
       <div>
         <!-- data pribadi -->
@@ -369,3 +361,40 @@
   <!-- form section end -->
 
 @endsection
+
+@push('script')
+  <script>
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $(document).ready(function () {
+      $('#form-pendaftaran').submit(function (e) { 
+        e.preventDefault();
+        let data = new FormData(this);
+
+        $.ajax({
+          type: "POST",
+          url: "{{ route('pendaftaran.store') }}",
+          data: data,
+          processData: false,  // Penting!
+          contentType: false,  // Penting!
+
+          success: function (response) {
+            $('#alert').removeClass('alert-hidden').fadeIn();
+            setTimeout(() => {
+              $('#alert').fadeOut();
+            }, 3000);
+          },
+
+          error: function (xhr) {
+            let errors = xhr.responseJSON.errors;
+            console.error(errors);
+          }
+        });
+      });
+    });
+  </script>
+@endpush

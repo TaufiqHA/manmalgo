@@ -44,3 +44,7 @@ body {
         @apply border-l-4 border-gray-300 pl-4 italic my-4;
     }
 }
+
+.alert-hidden {
+    @apply opacity-0;
+}

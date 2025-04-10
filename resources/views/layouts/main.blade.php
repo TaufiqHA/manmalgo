@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @vite('resources/css/app.css')
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://unpkg.com/feather-icons"></script>
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet">
     <title>MAN 1 GOWA | Home</title>
   </head>
-  <body>
+  <body>  
     <!-- navbar start -->
     <div class="hidden lg:flex navbar bg-base-100 shadow-sm fixed z-10">
       <div class="flex-1 flex items-center">
@@ -39,6 +40,12 @@
           <li><a href="/berita">Berita</a></li>
           <li><a href="/kontak">Kontak</a></li>
         </ul>
+      </div>
+      <div id="alert" role="alert" class="alert-hidden absolute right-5 -bottom-15 alert alert-success">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Pendaftaran Berhasil</span>
       </div>
     </div>
 
@@ -91,6 +98,12 @@
             <span class="badge badge-xs badge-primary indicator-item"></span>
           </div>
         </button> --}}
+      </div>
+      <div id="alert" role="alert" class="alert-hidden absolute right-5 -bottom-15 alert alert-success">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 shrink-0 stroke-current" fill="none" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+        </svg>
+        <span>Pendaftaran Berhasil</span>
       </div>
     </div>
     <!-- navbar end -->
